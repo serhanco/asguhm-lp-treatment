@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-Up Paketleri Önizleme</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <style>
+        /* --- Begin assets/css/style.css --- */
+        /*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #1977cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3291e6;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f1f7fd;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #2c4964;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #1977cc;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+        /* --- End assets/css/style.css --- */
+
+        /* --- Begin assets/css/checkup-packages.css --- */
+        h2 {
+            color: #2c4964;
+            font-weight: 600;
+        }
+
+        .package-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .package-card .card-header {
+            background-color: #f1f1f1;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 0; /* Remove padding to allow image to fill */
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .package-card .card-header img {
+            width: 100%;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .package-card .card-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding: 20px; /* Add padding back to the h3 itself */
+        }
+
+        .package-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1977cc; /* Theme color */
+            margin: 15px 0;
+        }
+
+        .package-card .btn-primary {
+            background-color: #1977cc; /* Theme color */
+            border-color: #1977cc; /* Theme color */
+        }
+
+        .package-card .btn-primary:hover {
+            background-color: #1c84e3; /* Theme hover color */
+            border-color: #1c84e3; /* Theme hover color */
+        }
+
+        .modal-header {
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .modal-body ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .modal-body ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f1f1;
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-body ul li::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        /* --- End assets/css/checkup-packages.css --- */
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- Kadınlar İçin Paketler -->
+<section id="kadin-paketleri" class="mb-5">
+    <h2 class="text-center mb-4">Kadınlara Özel Check-Up Paketleri</h2>
+    <div class="row">
+        <!-- Bronz Paket -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center package-card">
+                <div class="card-header">
+                    <img src="https://placehold.co/600x300/f1f7fd/2c4964?text=Bronz+Paket" alt="Bronz Paket Görseli">
+                    <h3>Bronz Paket</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Temel sağlık kontrolleri için ideal bir başlangıç.</p>
+                    <h4 class="price">1.500 ₺</h4>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#kadin-bronz-modal">Detayları Gör</button>
+                </div>
+            </div>
+        </div>
+        <!-- Gümüş Paket -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center package-card">
+                <div class="card-header">
+                    <img src="https://placehold.co/600x300/d6e9fa/2c4964?text=Gümüş+Paket" alt="Gümüş Paket Görseli">
+                    <h3>Gümüş Paket</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Genişletilmiş testler ile daha kapsamlı bir analiz.</p>
+                    <h4 class="price">2.500 ₺</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kadin-gumus-modal">Detayları Gör</button>
+                </div>
+            </div>
+        </div>
+        <!-- Altın Paket -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center package-card">
+                <div class="card-header">
+                    <img src="https://placehold.co/600x300/badaf7/2c4964?text=Altın+Paket" alt="Altın Paket Görseli">
+                    <h3>Altın Paket</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">En kapsamlı testler ve uzman doktor görüşmeleri.</p>
+                    <h4 class="price">4.000 ₺</h4>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#kadin-altin-modal">Detayları Gör</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Erkekler İçin Paketler -->
+<section id="erkek-paketleri" class="mb-5">
+    <h2 class="text-center mb-4">Erkeklere Özel Check-Up Paketleri</h2>
+    <div class="row">
+        <!-- Bronz Paket -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center package-card">
+                <div class="card-header">
+                    <img src="https://placehold.co/600x300/f1f7fd/2c4964?text=Bronz+Paket" alt="Bronz Paket Görseli">
+                    <h3>Bronz Paket</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Temel sağlık kontrolleri için ideal bir başlangıç.</p>
+                    <h4 class="price">1.500 ₺</h4>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#erkek-bronz-modal">Detayları Gör</button>
+                </div>
+            </div>
+        </div>
+        <!-- Gümüş Paket -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center package-card">
+                <div class="card-header">
+                    <img src="https://placehold.co/600x300/d6e9fa/2c4964?text=Gümüş+Paket" alt="Gümüş Paket Görseli">
+                    <h3>Gümüş Paket</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Genişletilmiş testler ile daha kapsamlı bir analiz.</p>
+                    <h4 class="price">2.500 ₺</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#erkek-gumus-modal">Detayları Gör</button>
+                </div>
+            </div>
+        </div>
+        <!-- Altın Paket -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 text-center package-card">
+                <div class="card-header">
+                    <img src="https://placehold.co/600x300/badaf7/2c4964?text=Altın+Paket" alt="Altın Paket Görseli">
+                    <h3>Altın Paket</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">En kapsamlı testler ve uzman doktor görüşmeleri.</p>
+                    <h4 class="price">4.000 ₺</h4>
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#erkek-altin-modal">Detayları Gör</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modals -->
+<!-- Kadın Bronz Modal -->
+<div class="modal fade" id="kadin-bronz-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kadın Bronz Paket Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Genel Muayene</li>
+                    <li>Tam Kan Sayımı</li>
+                    <li>İdrar Tahlili</li>
+                    <li>Akciğer Grafisi</li>
+                    <li>EKG</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Kadın Gümüş Modal -->
+<div class="modal fade" id="kadin-gumus-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kadın Gümüş Paket Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Genel Muayene</li>
+                    <li>Tam Kan Sayımı</li>
+                    <li>İdrar Tahlili</li>
+                    <li>Akciğer Grafisi</li>
+                    <li>EKG</li>
+                    <li>Tiroid Fonksiyon Testleri (TSH, T3, T4)</li>
+                    <li>Vitamin D, B12 Seviyeleri</li>
+                    <li>Meme Ultrasonu</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Kadın Altın Modal -->
+<div class="modal fade" id="kadin-altin-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kadın Altın Paket Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Kapsamlı Genel Muayene</li>
+                    <li>Tam Kan Sayımı ve Biyokimya</li>
+                    <li>İdrar Tahlili</li>
+                    <li>Akciğer Grafisi</li>
+                    <li>Eforlu EKG</li>
+                    <li>Tiroid Fonksiyon Testleri (TSH, T3, T4)</li>
+                    <li>Vitamin D, B12, Folik Asit Seviyeleri</li>
+                    <li>Meme Ultrasonu ve Mamografi</li>
+                    <li>Kardiyoloji Uzman Muayenesi</li>
+                    <li>Jinekolojik Muayene ve Smear Testi</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Erkek Bronz Modal -->
+<div class="modal fade" id="erkek-bronz-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Erkek Bronz Paket Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                 <ul>
+                    <li>Genel Muayene</li>
+                    <li>Tam Kan Sayımı</li>
+                    <li>İdrar Tahlili</li>
+                    <li>Akciğer Grafisi</li>
+                    <li>EKG</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Erkek Gümüş Modal -->
+<div class="modal fade" id="erkek-gumus-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Erkek Gümüş Paket Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Genel Muayene</li>
+                    <li>Tam Kan Sayımı</li>
+                    <li>İdrar Tahlili</li>
+                    <li>Akciğer Grafisi</li>
+                    <li>EKG</li>
+                    <li>Tiroid Fonksiyon Testleri (TSH, T3, T4)</li>
+                    <li>Vitamin D, B12 Seviyeleri</li>
+                    <li>Prostat Spesifik Antijen (PSA)</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Erkek Altın Modal -->
+<div class="modal fade" id="erkek-altin-modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Erkek Altın Paket Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Kapsamlı Genel Muayene</li>
+                    <li>Tam Kan Sayımı ve Biyokimya</li>
+                    <li>İdrar Tahlili</li>
+                    <li>Akciğer Grafisi</li>
+                    <li>Eforlu EKG</li>
+                    <li>Tiroid Fonksiyon Testleri (TSH, T3, T4)</li>
+                    <li>Vitamin D, B12, Folik Asit Seviyeleri</li>
+                    <li>Prostat Spesifik Antijen (PSA)</li>
+                    <li>Kardiyoloji Uzman Muayenesi</li>
+                    <li>Üroloji Uzman Muayenesi</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
