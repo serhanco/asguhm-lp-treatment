@@ -3,7 +3,7 @@
 Plugin Name: ASGUHM LP Treatment Support
 Plugin URI: http://iesyazilim.com.tr
 Description: Adds template and resources support for the LP Treatment custom post type.
-Version: 1.1
+Version: 1.2
 Author: İES YAZILIM
 Author URI: http://iesyazilim.com.tr
 License: GPL2
