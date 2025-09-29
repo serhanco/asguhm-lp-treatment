@@ -483,7 +483,7 @@ document.getElementById('form2').addEventListener('submit', function(event) {
         <div class="container">
             <div class="section-title">
                 <h2><?= $translations["Doctors"][$site] ?></h2>
-                <p><?= $translations["Doctors Description"][$site] ?></p>
+                <?php /* <p><?= $translations["Doctors Description"][$site] ?></p> */ ?>
             </div>
             <div class="row">
             <?php
@@ -609,29 +609,29 @@ document.getElementById('form2').addEventListener('submit', function(event) {
         </div>
         <div class="container-fluid">
             <div class="row g-0">
-                <div class="col-lg-3 col-4">
+                <div class="col-6 col-md-4">
                     <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>/assets/img/gallery/1.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/1.jpg" alt="" class="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
+                <div class="col-6 col-md-4">
                     <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/2.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/2.jpg" alt="" class="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
+                <div class="col-6 col-md-4">
                     <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/3.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/3.jpg" alt="" class="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
-                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/4.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/4.jpg" alt="" class="img-fluid"></a></div>
+                <div class="col-6 col-md-4">
+                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>/assets/img/gallery/4.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/4.jpg" alt="" class_="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
-                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/5.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/5.jpg" alt="" class="img-fluid"></a></div>
+                <div class="col-6 col-md-4">
+                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>/assets/img/gallery/5.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/5.jpg" alt="" class="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
-                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/6.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/6.jpg" alt="" class="img-fluid"></a></div>
+                <div class="col-6 col-md-4">
+                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>/assets/img/gallery/6.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/6.jpg" alt="" class="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
-                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/7.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/7.jpg" alt="" class="img-fluid"></a></div>
+                <div class="col-6 col-md-4">
+                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>/assets/img/gallery/7.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/7.jpg" alt="" class="img-fluid"></a></div>
                 </div>
-                <div class="col-lg-3 col-4">
-                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>assets/img/gallery/8.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/8.jpg" alt="" class="img-fluid"></a></div>
+                <div class="col-6 col-md-4">
+                    <div class="gallery-item"><a href="<?php echo $plugin_dir; ?>/assets/img/gallery/8.jpg" class="galelry-lightbox"><img loading="lazy" src="<?php echo $plugin_dir; ?>assets/img/gallery/8.jpg" alt="" class="img-fluid"></a></div>
                 </div>
             </div>
         </div>

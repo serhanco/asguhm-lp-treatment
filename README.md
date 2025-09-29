@@ -1,12 +1,12 @@
-=== ASGUHM LP Treatment Support Eklentisi Kullanım Kılavuzu ===
+# ASGUHM LP Treatment Support Eklentisi Kullanım Kılavuzu
 
 Bu doküman, eklentinin doğru bir şekilde kurulması ve kullanılması için gerekli adımları içermektedir.
 
-== AÇIKLAMA ==
+## AÇIKLAMA
 
 Bu eklenti, "treatment-lp" adındaki özel yazı tipi (Custom Post Type) için gelişmiş bir şablon desteği sunar. Eklenti, genel tedavi sayfaları için standart bir şablon ve "Check-Up" olarak işaretlenen sayfalar için özel, dinamik bir şablon sunar. Check-up şablonunun tüm içeriği (paketler, görseller, başlıklar, test detayları vb.) WordPress admin panelinden Gelişmiş Özel Alanlar (ACF) aracılığıyla yönetilir.
 
-== KURULUM VE AYARLAR (ÖNCELİKLİ VE ZORUNLU) ==
+## KURULUM VE AYARLAR (ÖNCELİKLİ VE ZORUNLU)
 
 Eklentinin çalışması için aşağıdaki bağımlılıkların ve ayarların **doğru sırada ve eksiksiz** yapılması KRİTİKTİR.
 
@@ -46,7 +46,7 @@ Check-up şablonunun çalışması için iki adet alan grubu ve içlerinde belir
                 *   `lp_detail_description` (Alan Tipi: `Textarea`, Etiket: `Detay Açıklaması`)
 
 
-== KULLANIM ==
+## KULLANIM
 
 1.  `treatment-lp` tipinde yeni bir gönderi oluşturun veya mevcut birini düzenleyin.
 2.  **Sayfa Tipi** alanına `check-up` değerini girin ve gönderiyi kaydedin. Sayfa yenilendiğinde, "Check-Up Paketleri İçeriği" alan grubunun göründüğünü göreceksiniz.
@@ -57,24 +57,24 @@ Check-up şablonunun çalışması için iki adet alan grubu ve içlerinde belir
 7.  Gönderiyi kaydedin. Girdiğiniz tüm içerik, ön yüzde otomatik olarak görünecektir.
 
 
-== ÖZELLEŞTİRME ==
+## ÖZELLEŞTİRME
 
 İçerik yönetimi tamamen admin panelinden yapılmaktadır. Eğer şablonun **yapısını veya stilini** değiştirmek isterseniz, ilgili dosyalar:
 
 *   **HTML Yapısı:** `templates/partials/section-checkup-packages.php`
 *   **CSS Stilleri:** `assets/css/checkup-packages.css`
 
-== DEĞİŞİKLİK KAYDI (CHANGELOG) ==
+## DEĞİŞİKLİK KAYDI (CHANGELOG)
 
-= 1.3 =
+### 1.3
 * İYİLEŞTİRME: "Doktorlar" bölümündeki açıklama metni gizlendi.
 * İYİLEŞTİRME: Galeri bölümündeki görsellerin daha büyük görünmesi için sütun sınıfları güncellendi.
 
-= 1.2 =
+### 1.2
 * YENİ: Tüm paket içeriği (başlıklar, görseller, açıklamalar, modal detayları) tamamen dinamik hale getirildi ve ACF Repeater alanlarına bağlandı.
 * DOKÜMANTASYON: `readme.txt` dosyası, yeni dinamik ACF yapısını ve kullanımını açıklayacak şekilde tamamen güncellendi.
 
-= 1.1 =
+### 1.1
 * YENİ: Kadın ve erkek paketleri tek bir "Check-Up Paketlerimiz" bölümü altında birleştirildi.
 * YENİ: Paket kartlarının üstüne, cinsiyete göre renkli kenarlıklar eklenerek görsel gruplama sağlandı.
 * YENİ: Paket kartlarının başlık ve görsel alanları, modal penceresini açmak için tıklanabilir hale getirildi.
@@ -82,5 +82,5 @@ Check-up şablonunun çalışması için iki adet alan grubu ve içlerinde belir
 * İYİLEŞTİRME: Check-up bölümünün renk paleti, ana tema ile tam uyumlu hale getirildi.
 * DOKÜMANTASYON: Eklenti kullanımı için `readme.txt` dosyası oluşturuldu.
 
-= 1.0 =
+### 1.0
 * Eklentinin ilk sürümü.
