@@ -437,7 +437,7 @@ document.getElementById('form1').addEventListener('submit', function(event) {
                 <div class="form-group mt-3">
                     <textarea id="f2message" class="form-control" name="Message" rows="5" placeholder="<?= the_field("f_message", "option") . " (" . $translations['Optional'][$site]; ?>)"></textarea>
                 </div>
-                <div class="text-center"><button id="f2submit" type="submit"><?= $translations["Make an Appointment"][$site] ?></button></div>
+                <div class="text-center mt-3"><button id="f2submit" type="submit"><?= $translations["Make an Appointment"][$site] ?></button></div>
             </form>
             <script>
 document.getElementById('form2').addEventListener('submit', function(event) {
