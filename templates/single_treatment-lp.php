@@ -1,5 +1,11 @@
 <?php
 get_header("lptr");
+
+// Determine form action URL based on Test Mode setting
+$is_test_mode = get_option('asguhm_lp_test_mode') === 'yes';
+$form_action_url = $is_test_mode 
+    ? plugins_url('form-handler.php', dirname(__DIR__)) // Correctly point to the plugin root
+    : 'https://internationalapp.net/formi/';
 $plugin_dir = plugins_url() . "/asguhm-lp-treatment/";
 $current_url = get_permalink();
 $uhmmail = "apply@acibadem.com";
@@ -280,7 +286,7 @@ $related_doctors = get_field('lp_related_doctors');
                 <div class="col-lg-4 d-flex align-items-stretch">
                     <div class="content">
                         <h3><?= $translations["Get Answers"][$site] ?>!</h3>
-                        <form action="https://internationalapp.net/formi/" method="post" role="form" id="form1">
+                        <form action="<?= esc_url($form_action_url) ?>" method="post" role="form" id="form1">
                             <div class="row">
                                 <div class="col-xl-6 form-group"><input type="text" name="FirstName" class="form-control" id="f1name" placeholder="<?= the_field('f_name', 'option'); ?>" required=""></div>
                                 <div class="col-xl-6 form-group mt-3 mt-xl-0"><input type="text" class="form-control" name="LastName" id="f1last" placeholder="<?= the_field('f_last', 'option'); ?>" required=""></div>
@@ -293,24 +299,9 @@ $related_doctors = get_field('lp_related_doctors');
                             <div class="form-group mt-3"><input type="text" class="form-control" name="Mail" id="f1mail" placeholder="<?= the_field('f_email', 'option'); ?>"></div>
                             <div class="form-group mt-3"><textarea class="form-control" name="Message" rows="5" placeholder="<?= the_field('f_message', 'option'); ?>" required=""></textarea></div>
                             <div class="text-center"><button id="f1submit" type="submit" class="form-control more-btn mt-3"><?= the_field('f_send', 'option'); ?><i class="bx bx-chevron-right"></i></button></div>
+                            <input type="hidden" name="form_url" value="">
                         </form>
-                        <script>
-document.getElementById('form1').addEventListener('submit', function(event) {
-    var phoneValue = document.getElementById('f1phone').value;
-    var emailValue = document.getElementById('f1mail').value;
-    var submitButton = document.getElementById('f1submit');
 
-    // Check if at least one of them is filled with at least 6 characters
-    if ((phoneValue.length < 6 && emailValue.length < 6) || (!phoneValue && !emailValue)) {
-        event.preventDefault();
-        alert('Please fill at least one of the phone or email fields with at least 6 characters.');
-    } else {
-        // Prevent double submission by disabling the submit button
-        submitButton.disabled = true;
-        submitButton.innerHTML = 'Submitting...';
-    }
-});
-</script>
                     </div>
                 </div>
                 <div class="col-lg-8 d-flex align-items-stretch">
@@ -340,7 +331,7 @@ document.getElementById('form1').addEventListener('submit', function(event) {
             </div>
         </div>
     </section>
-    <div class="text-center d-sm-block d-xs-block d-md-none"><a target="_blank" href="https://api.whatsapp.com/send/?phone=<?= the_field('lp_whatsapp_number') ?>&text&type=phone_number&app_absent=0"><img class="img-fluid my-4" src="<?= $plugin_dir ?>assets/img/banner/<?= $site ?>.png" alt=""></a>
+    <div class="text-center d-sm-block d-xs-block d-md-none"><a target="_blank" href="https://api.whatsapp.com/send/?phone=447387680090"><img class="img-fluid my-4" src="<?= $plugin_dir ?>assets/img/banner/12.png" alt=""></a>
     </div>
     <section id="about" class="about">
         <div class="container-fluid">
@@ -408,70 +399,33 @@ document.getElementById('form1').addEventListener('submit', function(event) {
                 <h2><?= $translations["Appointment"][$site] ?></h2>
                 <p><?= $translations["Appointment Description"][$site] ?></p>
             </div>
-            <form action="https://internationalapp.net/formi/" method="post" role="form" class="php-email-form" id="form2">
+            <form action="<?= esc_url($form_action_url) ?>" method="post" role="form" id="form2">
                 <div class="row">
-                    <div class="col-md-4 form-group"><input required type="text" name="FirstName" class="form-control" id="f2name" placeholder="<?= the_field('f_name', 'option'); ?>" data-rule="minlen:3" data-msg="Please enter at least 3 chars">
-                        <div class="validate"></div>
+                    <div class="col-md-4 form-group"><input required type="text" name="FirstName" class="form-control" id="f2name" placeholder="<?= the_field('f_name', 'option'); ?>">
                     </div>
-                    <div class="col-md-4 form-group mt-3 mt-md-0"><input required type="text" class="form-control" name="LastName" id="f2lname" placeholder="<?= the_field('f_last', 'option'); ?>" data-rule="email" data-msg="Please enter a valid email">
-                        <div class="validate"></div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0"><input required type="text" class="form-control" name="LastName" id="f2lname" placeholder="<?= the_field('f_last', 'option'); ?>">
                     </div>
-                    <div class="col-md-4 form-group mt-3 mt-md-0"><input type="tel" class="form-control" name="Phone" id="f2phone" placeholder="<?= the_field('f_phone', 'option'); ?>" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                        <div class="validate"></div>
+                    <div class="col-md-4 form-group mt-3 mt-md-0"><input type="tel" class="form-control" name="Phone" id="f2phone" placeholder="<?= the_field('f_phone', 'option'); ?>">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 form-group mt-3"><input type="email" class="form-control" name="Mail" id="f2email" placeholder="<?= the_field('f_email', 'option'); ?>" data-rule="email" data-msg="Please enter a valid email">
-                        <div class="validate"></div>
+                    <div class="col-md-4 form-group mt-3"><input type="email" class="form-control" name="Mail" id="f2email" placeholder="<?= the_field('f_email', 'option'); ?>">
                     </div>
                     <div class="col-md-4 form-group mt-3"><select required name="CountryId" id="f2country" class="form-select">
                             <option value=""><?= the_field('f_country', 'option'); ?></option>
                             <option value="" selected="" disabled="">Country</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoire</option><option value="53">Croatia</option><option value="54">Cuba</option><option value="155">Curaçao</option><option value="55">Cyprus</option><option value="56">Czechia</option><option value="246">Democratic Republic of the Congo</option><option value="57">Denmark</option><option value="58">Djibouti</option><option value="59">Dominica</option><option value="60">Dominican Republic</option><option value="62">Ecuador</option><option value="63">Egypt</option><option value="64">El Salvador</option><option value="65">England</option><option value="66">Equatorial Guinea</option><option value="67">Eritrea</option><option value="68">Estonia</option><option value="210">Eswatini</option><option value="69">Ethiopia</option><option value="70">Falkland Islands</option><option value="71">Faroe Islands</option><option value="72">Fiji</option><option value="74">Finland</option><option value="75">France</option><option value="77">French Guiana</option><option value="78">French Polynesia</option><option value="80">Gabon</option><option value="81">Gambia</option><option value="82">Georgia</option><option value="83">Germany</option><option value="84">Ghana</option><option value="85">Gibraltar</option><option value="86">Greece</option><option value="87">Greenland</option><option value="88">Grenada</option><option value="89">Guadeloupe</option><option value="90">Guam</option><option value="91">Guatemala</option><option value="92">Guinea</option><option value="93">Guinea-Bissau</option><option value="94">Guyana</option><option value="95">Haiti</option><option value="97">Honduras</option><option value="98">Hong Kong</option><option value="99">Hungary</option><option value="100">Iceland</option><option value="101">India</option><option value="102">Indonesia</option><option value="104">Iraq</option><option value="105">Ireland</option><option value="103">Islamic Republic of Iran</option><option value="106">Israel</option><option value="107">Italy</option><option value="108">Jamaica</option><option value="278">Japan</option><option value="110">Jordan</option><option value="111">Kazakhstan</option><option value="112">Kenya</option><option value="113">Kiribati</option><option value="250">Kosovo</option><option value="116">Kuwait</option><option value="117">Kyrgyzstan</option><option value="119">Lao People's Democratic Republic</option><option value="120">Latvia</option><option value="121">Lebanon</option><option value="122">Lesotho</option><option value="124">Liberia</option><option value="125">Libya</option><option value="126">Liechtenstein</option><option value="127">Lithuania</option><option value="128">Luxembourg</option><option value="129">Macao</option><option value="131">Madagascar</option><option value="132">Malawi</option><option value="133">Malaysia</option><option value="277">Maldives</option><option value="135">Mali</option><option value="136">Malta</option><option value="137">Marshall Islands</option><option value="138">Martinique</option><option value="139">Mauritania</option><option value="276">Mauritius</option><option value="141">Mayotte</option><option value="142">Mexico</option><option value="143">Micronesia</option><option value="144">Moldova</option><option value="145">Monaco</option><option value="146">Mongolia</option><option value="249">Montenegro</option><option value="147">Montserrat</option><option value="148">Morocco</option><option value="149">Mozambique</option><option value="150">Myanmar</option><option value="151">Namibia</option><option value="152">Nauru</option><option value="153">Nepal</option><option value="154">Netherlands</option><option value="156">New Caledonia</option><option value="157">New Zealand</option><option value="158">Nicaragua</option><option value="159">Niger</option><option value="160">Nigeria</option><option value="161">Niue</option><option value="162">Norfolk Island</option><option value="114">North Korea (Democratic People's Republic of Korea)</option><option value="130">North Macedonia</option><option value="163">Northern Cyprus (Turkish Republic of Northern Cyprus)</option><option value="164">Northern Mariana Islands</option><option value="165">Norway</option><option value="166">Oman</option><option value="167">Pakistan</option><option value="168">Palau</option><option value="73">Palestine</option><option value="169">Panama</option><option value="170">Papua New Guinea</option><option value="171">Paraguay</option><option value="172">Peru</option><option value="173">Philippines</option><option value="175">Poland</option><option value="176">Portugal</option><option value="177">Puerto Rico</option><option value="178">Qatar</option><option value="115">Republic of Korea</option><option value="179">Reunion</option><option value="180">Romania</option><option value="181">Russian Federation</option><option value="183">Rwanda</option><option value="205">Saint Helena, Ascension and Tristan da Cunha</option><option value="184">Saint Kitts and Nevis</option><option value="185">Saint Lucia</option><option value="206">Saint Pierre and Miquelon</option><option value="186">Saint Vincent and the Grenadines</option><option value="187">Samoa</option><option value="188">San Marino</option><option value="189">Sao Tome and Principe</option><option value="190">Saudi Arabia</option><option value="191">Scotland</option><option value="192">Senegal</option><option value="251">Serbia</option><option value="194">Seychelles</option><option value="195">Sierra Leone</option><option value="196">Singapore</option><option value="197">Slovakia</option><option value="198">Slovenia</option><option value="199">Solomon Islands</option><option value="200">Somalia</option><option value="201">South Africa</option><option value="279">South Sudan</option><option value="203">Spain</option><option value="204">Sri Lanka</option><option value="207">Sudan</option><option value="208">Suriname</option><option value="209">Svalbard and Jan Mayen</option><option value="211">Sweden</option><option value="212">Switzerland</option><option value="213">Syrian Arab Republic</option><option value="214">Taiwan</option><option value="215">Tajikistan</option><option value="216">Tanzania</option><option value="217">Thailand</option><option value="61">Timor-Leste</option><option value="218">Togo</option><option value="219">Tokelau</option><option value="220">Tonga</option><option value="221">Trinidad and Tobago</option><option value="222">Tunisia</option><option value="224">Turkmenistan</option><option value="225">Turks and Caicos Islands</option><option value="226">Tuvalu</option><option value="223">Türkiye</option><option value="228">Uganda</option><option value="229">Ukraine</option><option value="230">United Arab Emirates</option><option value="231">United Kingdom</option><option value="227">United States of America</option><option value="233">Uruguay</option><option value="235">Uzbekistan</option><option value="236">Vanuatu</option><option value="238">Venezuela</option><option value="239">Viet Nam</option><option value="240">Virgin Islands (British)</option><option value="241">Virgin Islands (U.S.)</option><option value="242">Wales</option><option value="243">Wallis and Futuna</option><option value="245">Yemen</option><option value="247">Zambia</option><option value="248">Zimbabwe</option>
                         </select>
-                        <div class="validate"></div>
                     </div>
-                    <div class="col-md-4 form-group mt-3"><input type="text" name="pdate" class="form-control" id="f2pdate" placeholder="<?= $translations["Preferred Date"][$site] ?>" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                        <div class="validate"></div>
+                    <div class="col-md-4 form-group mt-3"><input type="text" name="pdate" class="form-control" id="f2pdate" placeholder="<?= $translations["Preferred Date"][$site] ?>">
                     </div>
                 </div>
                 <div class="form-group mt-3">
                     <textarea id="f2message" class="form-control" name="Message" rows="5" placeholder="<?= the_field("f_message", "option") . " (" . $translations['Optional'][$site]; ?>)"></textarea>
                 </div>
                 <div class="text-center mt-3"><button id="f2submit" type="submit"><?= $translations["Make an Appointment"][$site] ?></button></div>
+                <input type="hidden" name="form_url" value="">
             </form>
-            <script>
-document.getElementById('form2').addEventListener('submit', function(event) {
-    // Prevent form submission
-    event.preventDefault();
-
-    var firstName = document.getElementById('f2name').value;
-    var lastName = document.getElementById('f2lname').value;
-    var phone = document.getElementById('f2phone').value;
-    var email = document.getElementById('f2email').value;
-    var pdate = document.getElementById('f2pdate').value;
-    var message = document.getElementById('f2message').value;
-    var submitButton = document.getElementById('f2submit');
-
-    // Check if either phone or email is provided with at least 6 characters
-    if ((phone.length < 6 && email.length < 6)) {
-        alert('Please provide either a valid phone number or email address with at least 6 characters.');
-        return;
-    }
-
-    // Append pdate to the message
-    message += ' Preferred Date: ' + pdate;
-
-    // Update the message field value
-    document.getElementById('f2message').value = message;
-
-    // Disable the submit button to prevent double submissions
-    submitButton.disabled = true;
-    submitButton.innerHTML = 'Submitting...';
-
-    // Submit the form
-    this.submit();
-});
-</script>             
+                         
         </div>
     </section>
 
@@ -669,7 +623,7 @@ document.getElementById('form2').addEventListener('submit', function(event) {
                     </div>
                 </div>
                 <div class="col-lg-8 mt-5 mt-lg-0">
-                    <form action="https://internationalapp.net/formi/" method="post" role="form" class="php-email-form" id="form3">
+                    <form action="<?= esc_url($form_action_url) ?>" method="post" role="form" id="form3">
                         <div class="row">
                             <div class="col-md-6 form-group"><input type="text" name="FirstName" class="form-control" id="f3name" placeholder="<?= the_field('f_name', 'option'); ?>" required></div>
                             <div class="col-md-6 form-group"><input type="text" name="LastName" class="form-control" id="f3last" placeholder="<?= the_field('f_last', 'option'); ?>" required></div>
@@ -686,36 +640,13 @@ document.getElementById('form2').addEventListener('submit', function(event) {
                         </div>
                         <div class="form-group mt-3"><textarea class="form-control" name="Message" rows="5" placeholder="<?= the_field('f_message', 'option'); ?>"></textarea></div>
                         <div class="mt-3 text-center"><button id="f3submit" type="submit"><?= the_field('f_send', 'option'); ?> <i class="bx bx-chevron-right"></i></button></div>
+                        <input type="hidden" name="form_url" value="">
                     </form>
-                    <script>
-document.getElementById('form3').addEventListener('submit', function(event) {
-    // Prevent form submission
-    event.preventDefault();
-
-    var firstName = document.getElementById('f3name').value;
-    var lastName = document.getElementById('f3last').value;
-    var phone = document.getElementById('f3phone').value;
-    var email = document.getElementById('f3mail').value;
-    var submitButton = document.getElementById('f3submit');
-
-    // Check if either phone or email is provided with at least 6 characters
-    if ((phone.length < 6 && email.length < 6) || (!phone && !email)) {
-        alert('Please provide either a valid phone number or email address with at least 6 characters.');
-        return;
-    }
-
-    // Disable the submit button to prevent double submissions
-    submitButton.disabled = true;
-    submitButton.innerHTML = 'Submitting...';
-
-    // Submit the form
-    this.submit();
-});
-</script>
 
                 </div>
             </div>
         </div>
     </section>
 </main>
+<script src="<?= $plugin_dir ?>assets/js/form-validation.js"></script>
 <?php get_footer("lp"); ?>

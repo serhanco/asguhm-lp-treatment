@@ -70,46 +70,125 @@ add_filter('single_template', 'lp_treatment_template');
 
 
 
-/*
-function remove_figure_for_specific($block_content, $block) {
-    if ($block['blockName'] === 'core/image' && strpos($block_content, 'no-responsive') !== false) {
-        $block_content = preg_replace('/<figure[^>]*>(.*?)<\/figure>/', '$1', $block_content);
-    }
-    return $block_content;
-}
-add_filter('render_block', 'remove_figure_for_specific', 10, 2);
+// /*
+// function remove_figure_for_specific($block_content, $block) {
+//     if ($block['blockName'] === 'core/image' && strpos($block_content, 'no-responsive') !== false) {
+//         $block_content = preg_replace('/<figure[^>]*>(.*?)<\/figure>/', '$1', $block_content);
+//     }
+//     return $block_content;
+// }
+// add_filter('render_block', 'remove_figure_for_specific', 10, 2);
+// 
+// 
+// function remove_responsive_images_completely($content) {
+//     // Handle both standard img tags and those with no-responsive class
+//     $pattern = '/<img[^>]*(?:class="[^"]*no-responsive[^"]*"|class=\'[^\\]*no-responsive[^\\]*\'|class=[^"\\]\[^>]*no-responsive[^>]*)[^>]*>/i';
+//     
+//     if (preg_match_all($pattern, $content, $matches)) {
+//         foreach ($matches[0] as $img_tag) {
+//             $cleaned_img = preg_replace([
+//                 '/\ssrcset=["\\]*[^"\\]*["\\]*/',
+//                 '/\ssizes=["\\]*[^"\\]*["\\]*/',
+//                 '/\sdata-lazy-srcset=["\\]*[^"\\]*["\\]*/',
+//                 '/\sdata-lazy-sizes=["\\]*[^"\\]*["\\]*/',
+//                 '/\sdata-ll-status=["\\]*[^"\\]*["\\]*/',
+//                 '/\sdata-lazy-src=["\\]*[^"\\]*["\\]*/'
+//             ], '', $img_tag);
+//             
+//             $content = str_replace($img_tag, $cleaned_img, $content);
+//         }
+//     }
+//     
+//     return $content;
+// }
+// add_filter('the_content', 'remove_responsive_images_completely', 20);
+// add_filter('render_block_core/image', 'remove_responsive_images_completely', 20);
+// 
+// // Also keep the previous filter for good measure
+// function remove_responsive_block_images($block_content, $block) {
+//     if ($block['blockName'] === 'core/image') {
+//         return remove_responsive_images_completely($block_content);
+//     }
+//     return $block_content;
+// }
+// add_filter('render_block', 'remove_responsive_block_images', 20, 2);
+// */
 
+// ====== ASGUHM LP Settings ====== //
 
-function remove_responsive_images_completely($content) {
-    // Handle both standard img tags and those with no-responsive class
-    $pattern = '/<img[^>]*(?:class="[^"]*no-responsive[^"]*"|class=\'[^\']*no-responsive[^\']*\'|class=[^"\'][^>]*no-responsive[^>]*)[^>]*>/i';
-    
-    if (preg_match_all($pattern, $content, $matches)) {
-        foreach ($matches[0] as $img_tag) {
-            $cleaned_img = preg_replace([
-                '/\ssrcset=[\'"][^\'"]*[\'"]/',
-                '/\ssizes=[\'"][^\'"]*[\'"]/',
-                '/\sdata-lazy-srcset=[\'"][^\'"]*[\'"]/',
-                '/\sdata-lazy-sizes=[\'"][^\'"]*[\'"]/',
-                '/\sdata-ll-status=[\'"][^\'"]*[\'"]/',
-                '/\sdata-lazy-src=[\'"][^\'"]*[\'"]/'
-            ], '', $img_tag);
-            
-            $content = str_replace($img_tag, $cleaned_img, $content);
-        }
-    }
-    
-    return $content;
+// 1. Add Admin Menu
+function asguhm_lp_add_admin_menu() {
+    add_options_page(
+        'LP Treatment Settings',
+        'LP Treatment',
+        'manage_options',
+        'asguhm_lp_treatment',
+        'asguhm_lp_settings_page_html'
+    );
 }
-add_filter('the_content', 'remove_responsive_images_completely', 20);
-add_filter('render_block_core/image', 'remove_responsive_images_completely', 20);
+add_action('admin_menu', 'asguhm_lp_add_admin_menu');
 
-// Also keep the previous filter for good measure
-function remove_responsive_block_images($block_content, $block) {
-    if ($block['blockName'] === 'core/image') {
-        return remove_responsive_images_completely($block_content);
-    }
-    return $block_content;
+// 2. Register Settings
+function asguhm_lp_settings_init() {
+    register_setting('asguhm_lp_settings_group', 'asguhm_lp_test_mode');
+
+    add_settings_section(
+        'asguhm_lp_settings_section',
+        'Form Settings',
+        'asguhm_lp_settings_section_callback',
+        'asguhm_lp_treatment'
+    );
+
+    add_settings_field(
+        'asguhm_lp_test_mode_field',
+        'Test Mode',
+        'asguhm_lp_test_mode_field_callback',
+        'asguhm_lp_treatment',
+        'asguhm_lp_settings_section'
+    );
 }
-add_filter('render_block', 'remove_responsive_block_images', 20, 2);
-*/
+add_action('admin_init', 'asguhm_lp_settings_init');
+
+// 3. Callbacks
+function asguhm_lp_settings_section_callback() {
+    echo 'Configure settings for the LP Treatment forms.';
+}
+
+function asguhm_lp_test_mode_field_callback() {
+    $option = get_option('asguhm_lp_test_mode');
+    ?>
+    <input type="checkbox" id="asguhm_lp_test_mode" name="asguhm_lp_test_mode" value="yes" <?php checked('yes', $option, true); ?> />
+    <label for="asguhm_lp_test_mode">Enable Test Mode. If checked, forms will submit to a debug handler instead of the live endpoint.</label>
+    <?php
+}
+
+// 4. Settings Page HTML
+function asguhm_lp_settings_page_html() {
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields('asguhm_lp_settings_group');
+            do_settings_sections('asguhm_lp_treatment');
+            submit_button('Save Settings');
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+// 5. Admin Notice for Test Mode
+function asguhm_lp_test_mode_admin_notice() {
+    if (get_option('asguhm_lp_test_mode') === 'yes') {
+        ?>
+        <div class="notice notice-warning is-dismissible">
+            <p><strong>AsgUHM LP Treatment Plugin:</strong> Test Mode is currently active. Form submissions will not be sent to the live endpoint.</p>
+        </div>
+        <?php
+    }
+}
+add_action('admin_notices', 'asguhm_lp_test_mode_admin_notice');
