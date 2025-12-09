@@ -1,0 +1,13 @@
+This file contains instructions for testing the form submission process using `post_data_dump.php`.
+
+How to use `post_data_dump.php`:
+1. This script is designed to capture and display all data sent via the POST method from any form.
+2. It is independent of WordPress and can be run on any PHP server.
+3. To use it for testing, you need to change the `action` attribute of the form you want to test.
+4. Set the `action` attribute to the full URL of this script.
+   Example:
+   action="http://your-domain.com/path/to/asguhm-lp-treatment/post_data_dump.php"
+
+5. After setting the action, submit the form. The browser will navigate to `post_data_dump.php`, which will then display all the key-value pairs of the data you submitted.
+
+This is useful for debugging to ensure that the form is sending the correct data before it's processed by the final endpoint (like `form-handler.php` or `https://internationalapp.net/formi/`).
