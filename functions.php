@@ -131,6 +131,7 @@ add_action('admin_menu', 'asguhm_lp_add_admin_menu');
 // 2. Register Settings
 function asguhm_lp_settings_init() {
     register_setting('asguhm_lp_settings_group', 'asguhm_lp_test_mode');
+    register_setting('asguhm_lp_settings_group', 'asguhm_lp_test_url');
 
     add_settings_section(
         'asguhm_lp_settings_section',
@@ -143,6 +144,14 @@ function asguhm_lp_settings_init() {
         'asguhm_lp_test_mode_field',
         'Test Mode',
         'asguhm_lp_test_mode_field_callback',
+        'asguhm_lp_treatment',
+        'asguhm_lp_settings_section'
+    );
+
+    add_settings_field(
+        'asguhm_lp_test_url_field',
+        'Test Mode URL',
+        'asguhm_lp_test_url_field_callback',
         'asguhm_lp_treatment',
         'asguhm_lp_settings_section'
     );
@@ -161,6 +170,16 @@ function asguhm_lp_test_mode_field_callback() {
     <label for="asguhm_lp_test_mode">Enable Test Mode. If checked, forms will submit to a debug handler instead of the live endpoint.</label>
     <?php
 }
+
+function asguhm_lp_test_url_field_callback() {
+    $default_url = 'https://serhan.site/req_test/post_data_dump.php';
+    $option = get_option('asguhm_lp_test_url', $default_url);
+    ?>
+    <input type="url" id="asguhm_lp_test_url" name="asguhm_lp_test_url" value="<?php echo esc_attr($option); ?>" size="50" placeholder="<?php echo $default_url; ?>" />
+    <p class="description">The URL where forms will be sent when Test Mode is enabled. Defaults to the pre-configured dump URL.</p>
+    <?php
+}
+
 
 // 4. Settings Page HTML
 function asguhm_lp_settings_page_html() {
@@ -184,9 +203,11 @@ function asguhm_lp_settings_page_html() {
 // 5. Admin Notice for Test Mode
 function asguhm_lp_test_mode_admin_notice() {
     if (get_option('asguhm_lp_test_mode') === 'yes') {
+        $default_url = 'https://serhan.site/req_test/post_data_dump.php';
+        $test_url = get_option('asguhm_lp_test_url', $default_url);
         ?>
         <div class="notice notice-warning is-dismissible">
-            <p><strong>AsgUHM LP Treatment Plugin:</strong> Test Mode is currently active. Form submissions are being sent to <strong>https://serhan.site/req_test/post_data_dump.php</strong> for debugging.</p>
+            <p><strong>AsgUHM LP Treatment Plugin:</strong> Test Mode is currently active. Form submissions are being sent to <strong><?php echo esc_url($test_url); ?></strong> for debugging.</p>
         </div>
         <?php
     }
