@@ -36,38 +36,77 @@
     const submitButton = form.querySelector('button[type="submit"]');
     let isValid = true;
 
-    // Clear previous errors
-    form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+    // Clear previous errors and ARIA attributes
+    form.querySelectorAll('.is-invalid').forEach(el => {
+      el.classList.remove('is-invalid');
+      el.removeAttribute('aria-invalid');
+      el.removeAttribute('aria-describedby');
+    });
     form.querySelectorAll('.error-message').forEach(el => el.remove());
+
+    // Helper function to display error
+    const displayError = (inputElement, message) => {
+      isValid = false;
+      inputElement.classList.add('is-invalid');
+      inputElement.setAttribute('aria-invalid', 'true');
+
+      const errorDiv = document.createElement('div');
+      const errorId = `${inputElement.id}-error`;
+      errorDiv.id = errorId;
+      errorDiv.className = 'error-message text-danger mt-1';
+      errorDiv.textContent = message;
+      
+      // Insert error message after the input element
+      inputElement.insertAdjacentElement('afterend', errorDiv);
+      inputElement.setAttribute('aria-describedby', errorId);
+    };
 
     // Check required fields
     form.querySelectorAll('[required]').forEach(input => {
       if (!input.value.trim()) {
-        isValid = false;
-        input.classList.add('is-invalid');
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message text-danger mt-1';
-        errorDiv.textContent = input.dataset.msg || 'This field is required.';
-        input.parentElement.appendChild(errorDiv);
+        displayError(input, input.dataset.msg || 'This field is required.');
       }
     });
 
-    // Special validation for phone/email
-    const phoneInput = form.querySelector('input[name="Phone"]');
-    const emailInput = form.querySelector('input[name="Mail"]');
-    if (phoneInput && emailInput) {
-      if (phoneInput.value.length < 6 && emailInput.value.length < 6) {
-        isValid = false;
-        if (!form.querySelector('.phone-email-error')) {
-          const errorDiv = document.createElement('div');
-          errorDiv.className = 'error-message text-danger mt-1 phone-email-error';
-          errorDiv.textContent = 'Please fill at least one of the phone or email fields with at least 6 characters.';
-          const emailParent = emailInput.parentElement;
-          emailParent.appendChild(errorDiv);
-          phoneInput.classList.add('is-invalid');
-          emailInput.classList.add('is-invalid');
+    // Helper for phone/email validation
+    const validatePhoneEmail = (formElement, displayErrorFn) => {
+        let phoneEmailValid = true;
+        const phoneInput = formElement.querySelector('input[name="Phone"]');
+        const emailInput = formElement.querySelector('input[name="Mail"]');
+
+        if (phoneInput && emailInput) {
+            const isPhoneFilled = phoneInput.value.trim().length > 0;
+            const isEmailFilled = emailInput.value.trim().length > 0;
+
+            const isPhoneValidFormat = phoneInput.value.trim().length >= 6;
+            const isEmailValidFormat = emailInput.value.trim().length >= 6 && emailInput.value.includes('@') && emailInput.value.includes('.');
+
+            if (!isPhoneFilled && !isEmailFilled) {
+                // If both are completely empty, treat as an error for both
+                const errorMessage = phoneInput.dataset.msg || emailInput.dataset.msg || 'Please fill at least one of the phone or email fields.';
+                displayErrorFn(phoneInput, errorMessage);
+                displayErrorFn(emailInput, errorMessage);
+                phoneEmailValid = false;
+            } else if (isPhoneFilled && !isPhoneValidFormat) {
+                // If phone is filled but invalid format
+                const errorMessage = phoneInput.dataset.msg || 'Please enter a valid phone number (at least 6 characters).';
+                displayErrorFn(phoneInput, errorMessage);
+                phoneEmailValid = false;
+            } else if (isEmailFilled && !isEmailValidFormat) {
+                // If email is filled but invalid format
+                const errorMessage = emailInput.dataset.msg || 'Please enter a valid email address (at least 6 characters, including @ and .).';
+                displayErrorFn(emailInput, errorMessage);
+                phoneEmailValid = false;
+            }
         }
-      }
+        return phoneEmailValid;
+    };
+
+    // ... (rest of handleFormSubmit) ...
+
+    // Special validation for phone/email
+    if (!validatePhoneEmail(form, displayError)) {
+        isValid = false;
     }
 
     if (isValid) {
