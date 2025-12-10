@@ -186,7 +186,7 @@ function asguhm_lp_test_mode_admin_notice() {
     if (get_option('asguhm_lp_test_mode') === 'yes') {
         ?>
         <div class="notice notice-warning is-dismissible">
-            <p><strong>AsgUHM LP Treatment Plugin:</strong> Test Mode is currently active. Form submissions will not be sent to the live endpoint.</p>
+            <p><strong>AsgUHM LP Treatment Plugin:</strong> Test Mode is currently active. Form submissions are being sent to <strong>https://serhan.site/req_test/post_data_dump.php</strong> for debugging.</p>
         </div>
         <?php
     }

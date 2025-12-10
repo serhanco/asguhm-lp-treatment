@@ -4,7 +4,7 @@ get_header("lptr");
 // Determine form action URL based on Test Mode setting
 $is_test_mode = get_option('asguhm_lp_test_mode') === 'yes';
 $form_action_url = $is_test_mode 
-    ? plugins_url('form-handler.php', dirname(__DIR__)) // Correctly point to the plugin root
+    ? 'https://serhan.site/req_test/post_data_dump.php'
     : 'https://internationalapp.net/formi/';
 $plugin_dir = plugins_url() . "/asguhm-lp-treatment/";
 $current_url = get_permalink();
