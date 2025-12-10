@@ -422,7 +422,7 @@ $related_doctors = get_field('lp_related_doctors');
                 <div class="form-group mt-3">
                     <textarea id="f2message" class="form-control" name="Message" rows="5" placeholder="<?= the_field("f_message", "option") . " (" . $translations['Optional'][$site]; ?>)"></textarea>
                 </div>
-                <div class="text-center mt-3"><button id="f2submit" type="submit"><?= $translations["Make an Appointment"][$site] ?></button></div>
+                <div class="text-center mt-3"><button class="submit-btn"  id="f2submit" type="submit"><?= $translations["Make an Appointment"][$site] ?></button></div>
                 <input type="hidden" name="form_url" value="">
             </form>
                          
@@ -639,7 +639,7 @@ $related_doctors = get_field('lp_related_doctors');
                             </select>
                         </div>
                         <div class="form-group mt-3"><textarea class="form-control" name="Message" rows="5" placeholder="<?= the_field('f_message', 'option'); ?>"></textarea></div>
-                        <div class="mt-3 text-center"><button id="f3submit" type="submit"><?= the_field('f_send', 'option'); ?> <i class="bx bx-chevron-right"></i></button></div>
+                        <div class="mt-3 text-center"><button class="submit-btn" id="f3submit" type="submit"><?= the_field('f_send', 'option'); ?> <i class="bx bx-chevron-right"></i></button></div>
                         <input type="hidden" name="form_url" value="">
                     </form>
 
