@@ -334,7 +334,7 @@ $related_doctors = get_field('lp_related_doctors');
             </div>
         </div>
     </section>
-    <div class="text-center d-sm-block d-xs-block d-md-none"><a target="_blank" href="https://api.whatsapp.com/send/?phone=447387680090"><img class="img-fluid my-4" src="<?= $plugin_dir ?>assets/img/banner/12.png" alt=""></a>
+    <div class="text-center d-sm-block d-xs-block d-md-none"><a target="_blank" href="https://api.whatsapp.com/send/?phone=<?= the_field('lp_whatsapp_number') ?>&text&type=phone_number&app_absent=0"><img class="img-fluid my-4" src="<?= $plugin_dir ?>assets/img/banner/12.png" alt=""></a>
     </div>
     <section id="about" class="about">
         <div class="container-fluid">
