@@ -87,7 +87,7 @@ $packages = [
     ],
 ];
 ?>
-<section id="checkup-packages" class="mb-5">
+<div id="checkup-packages">
     <div class="section-title">
         <h2><?= $translations["checkup_section_title"][$site] ?></h2>
         <?php if (!empty($translations["checkup_section_subtitle"][$site])) : ?>
@@ -119,7 +119,7 @@ $packages = [
             </div>
         <?php endforeach; ?>
     </div>
-</section>
+</div>
 
 <!-- Modals -->
 <?php foreach ($packages as $index => $package) : ?>
