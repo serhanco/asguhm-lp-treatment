@@ -1,96 +1,159 @@
 <?php
-// Check if the main repeater field has rows of data.
-if (have_rows('lp_checkup_packages')) :
+// This variable is expected to be defined in the parent template (single_treatment-lp.php)
+// It provides the URL to the plugin's root directory.
+global $plugin_dir, $translations, $site;
+
+// Static package data array. No longer dependent on ACF.
+$packages = [
+    // Women
+    [
+        'title_key' => 'women_classic_title',
+        'gender' => 'women',
+        'image' => 'women_classic.webp',
+        'description_key' => 'women_classic_description',
+        'price' => '',
+        'modal_id' => 'modal-women-classic',
+        'details' => [
+            ['title_key' => 'women_classic_detail_1_title', 'description_key' => 'women_classic_detail_1_description'],
+            ['title_key' => 'women_classic_detail_2_title', 'description_key' => 'women_classic_detail_2_description'],
+            ['title_key' => 'women_classic_detail_3_title', 'description_key' => 'women_classic_detail_3_description'],
+        ]
+    ],
+    [
+        'title_key' => 'women_gold_title',
+        'gender' => 'women',
+        'image' => 'women_gold.webp',
+        'description_key' => 'women_gold_description',
+        'price' => '',
+        'modal_id' => 'modal-women-gold',
+        'details' => [
+            ['title_key' => 'women_gold_detail_1_title', 'description_key' => 'women_gold_detail_1_description'],
+            ['title_key' => 'women_gold_detail_2_title', 'description_key' => 'women_gold_detail_2_description'],
+            ['title_key' => 'women_gold_detail_3_title', 'description_key' => 'women_gold_detail_3_description'],
+        ]
+    ],
+    [
+        'title_key' => 'women_executive_title',
+        'gender' => 'women',
+        'image' => 'women_executive.webp',
+        'description_key' => 'women_executive_description',
+        'price' => '',
+        'modal_id' => 'modal-women-executive',
+        'details' => [
+            ['title_key' => 'women_executive_detail_1_title', 'description_key' => 'women_executive_detail_1_description'],
+            ['title_key' => 'women_executive_detail_2_title', 'description_key' => 'women_executive_detail_2_description'],
+            ['title_key' => 'women_executive_detail_3_title', 'description_key' => 'women_executive_detail_3_description'],
+        ]
+    ],
+    // Men
+    [
+        'title_key' => 'men_classic_title',
+        'gender' => 'men',
+        'image' => 'men_classic.webp',
+        'description_key' => 'men_classic_description',
+        'price' => '',
+        'modal_id' => 'modal-men-classic',
+        'details' => [
+            ['title_key' => 'men_classic_detail_1_title', 'description_key' => 'men_classic_detail_1_description'],
+            ['title_key' => 'men_classic_detail_2_title', 'description_key' => 'men_classic_detail_2_description'],
+            ['title_key' => 'men_classic_detail_3_title', 'description_key' => 'men_classic_detail_3_description'],
+        ]
+    ],
+    [
+        'title_key' => 'men_gold_title',
+        'gender' => 'men',
+        'image' => 'men_gold.webp',
+        'description_key' => 'men_gold_description',
+        'price' => '',
+        'modal_id' => 'modal-men-gold',
+        'details' => [
+            ['title_key' => 'men_gold_detail_1_title', 'description_key' => 'men_gold_detail_1_description'],
+            ['title_key' => 'men_gold_detail_2_title', 'description_key' => 'men_gold_detail_2_description'],
+            ['title_key' => 'men_gold_detail_3_title', 'description_key' => 'men_gold_detail_3_description'],
+        ]
+    ],
+    [
+        'title_key' => 'men_executive_title',
+        'gender' => 'men',
+        'image' => 'men_executive.webp',
+        'description_key' => 'men_executive_description',
+        'price' => '',
+        'modal_id' => 'modal-men-executive',
+        'details' => [
+            ['title_key' => 'men_executive_detail_1_title', 'description_key' => 'men_executive_detail_1_description'],
+            ['title_key' => 'men_executive_detail_2_title', 'description_key' => 'men_executive_detail_2_description'],
+            ['title_key' => 'men_executive_detail_3_title', 'description_key' => 'men_executive_detail_3_description'],
+        ]
+    ],
+];
 ?>
 <section id="checkup-packages" class="mb-5">
     <div class="section-title">
-        <h2>Check-Up Paketlerimiz</h2>
-        <p>Size en uygun paketi seçerek sağlığınız için önemli bir adım atın.</p>
+        <h2><?= $translations["checkup_section_title"][$site] ?></h2>
+        <?php if (!empty($translations["checkup_section_subtitle"][$site])) : ?>
+        <p><?= $translations["checkup_section_subtitle"][$site] ?></p>
+        <?php endif; ?>
     </div>
     
     <div class="row">
-        <?php 
-        // Loop through the rows of data for the main repeater.
-        while (have_rows('lp_checkup_packages')) : the_row();
-            // Get sub field values.
-            $package_title = get_sub_field('lp_package_title');
-            $package_gender = get_sub_field('lp_package_gender');
-            $package_image = get_sub_field('lp_package_image');
-            $package_description = get_sub_field('lp_package_description');
-            $package_modal_id = get_sub_field('lp_package_modal_id');
-            // NOTE: Price is intentionally hardcoded as requested.
-            $package_price = '1.500 ₺'; // Example price, adjust as needed.
-        ?>
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 text-center package-card package-<?php echo esc_attr($package_gender); ?>">
-                <div class="card-header clickable-header" data-bs-toggle="modal" data-bs-target="#<?php echo esc_attr($package_modal_id); ?>">
-                    <?php if ($package_image) : ?>
-                        <img src="<?php echo esc_url($package_image); ?>" alt="<?php echo esc_attr($package_title); ?> Görseli">
-                    <?php endif; ?>
-                    <h3><?php echo esc_html($package_title); ?></h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><?php echo esc_html($package_description); ?></p>
-                    <h4 class="price"><?php echo esc_html($package_price); ?></h4>
-                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#<?php echo esc_attr($package_modal_id); ?>">Detayları Gör</button>
+        <?php foreach ($packages as $package) : ?>
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 text-center package-card package-<?php echo esc_attr($package['gender']); ?>">
+                    <div class="card-header clickable-header" data-bs-toggle="modal" data-bs-target="#<?php echo esc_attr($package['modal_id']); ?>">
+                        <?php if (isset($plugin_dir)) : ?>
+                        <img src="<?php echo esc_url($plugin_dir . 'assets/img/ckp_packages/' . $package['image']); ?>" alt="<?php echo esc_attr($translations[$package['title_key']][$site]); ?> Package Image">
+                        <?php endif; ?>
+                    </div>
+                    <div class="card-body">
+                        <?php if (!empty($translations[$package['description_key']][$site])) : ?>
+                        <p class="card-text"><?php echo esc_html($translations[$package['description_key']][$site]); ?></p>
+                        <?php endif; ?>
+
+                        <?php if (!empty($package['price'])) : ?>
+                        <h4 class="price"><?php echo esc_html($package['price']); ?></h4>
+                        <?php endif; ?>
+                        
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#<?php echo esc_attr($package['modal_id']); ?>"><?= $translations["Package Details"][$site] ?></button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <?php endwhile; ?>
+        <?php endforeach; ?>
     </div>
 </section>
 
 <!-- Modals -->
-<?php 
-// Loop again for the modals to ensure all cards are rendered before modals.
-while (have_rows('lp_checkup_packages')) : the_row();
-    $package_title = get_sub_field('lp_package_title');
-    $package_modal_id = get_sub_field('lp_package_modal_id');
-?>
-<div class="modal fade" id="<?php echo esc_attr($package_modal_id); ?>" tabindex="-1">
+<?php foreach ($packages as $index => $package) : ?>
+<div class="modal fade" id="<?php echo esc_attr($package['modal_id']); ?>" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><?php echo esc_html($package_title); ?> Detayları</h5>
+                <h5 class="modal-title"><?php echo esc_html($translations[$package['title_key']][$site]); ?> Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <?php if (have_rows('lp_package_details')) : ?>
-                    <div class="accordion modal-accordion" id="accordion-<?php echo esc_attr($package_modal_id); ?>">
-                        <?php 
-                        // Loop through the nested repeater for accordion items.
-                        while (have_rows('lp_package_details')) : the_row();
-                            $detail_title = get_sub_field('lp_detail_title');
-                            $detail_description = get_sub_field('lp_detail_description');
-                            $row_index = get_row_index(); // Main repeater index
-                            $sub_row_index = get_sub_row_index(); // Nested repeater index
-                            $collapse_id = 'collapse-' . $row_index . '-' . $sub_row_index;
-                        ?>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id; ?>">
-                                    <?php echo esc_html($detail_title); ?>
-                                </button>
-                            </h2>
-                            <div id="<?php echo $collapse_id; ?>" class="accordion-collapse collapse" data-bs-parent="#accordion-<?php echo esc_attr($package_modal_id); ?>">
-                                <div class="accordion-body">
-                                    <?php echo esc_html($detail_description); ?>
-                                </div>
+                <div class="accordion modal-accordion" id="accordion-<?php echo esc_attr($package['modal_id']); ?>">
+                    <?php foreach ($package['details'] as $sub_index => $detail) : 
+                        $collapse_id = 'collapse-' . $index . '-' . $sub_index;
+                    ?>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id; ?>">
+                                <?php echo esc_html($translations[$detail['title_key']][$site]); ?>
+                            </button>
+                        </h2>
+                        <div id="<?php echo $collapse_id; ?>" class="accordion-collapse collapse" data-bs-parent="#accordion-<?php echo esc_attr($package['modal_id']); ?>">
+                            <div class="accordion-body">
+                                <?php echo esc_html($translations[$detail['description_key']][$site]); ?>
                             </div>
                         </div>
-                        <?php endwhile; ?>
                     </div>
-                <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $translations["modal_close_button"][$site] ?></button>
             </div>
         </div>
     </div>
 </div>
-<?php 
-endwhile; 
-// Reset Post Data
-wp_reset_postdata();
-endif; 
-?>
+<?php endforeach; ?>

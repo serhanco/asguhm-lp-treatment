@@ -1763,3 +1763,18 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+/*--------------------------------------------------------------
+# Check-up Packages Styling
+--------------------------------------------------------------*/
+#checkup-packages .package-card .card-header {
+  padding: 0;
+}
+
+#checkup-packages .package-card .card-header img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Use cover to fill the area, combined with width/height auto it will not overflow */
+  border-radius: 4px 4px 0 0;
+}

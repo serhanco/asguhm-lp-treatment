@@ -26,6 +26,9 @@ switch ($domain) {
     case 'acibadem.com.ru':
         $site = 'ru';
         break;
+    case 'acibadem.de': // Added German domain
+        $site = 'de';
+        break;
     default:
         $site = 'en';
         break;
@@ -36,139 +39,249 @@ $translations = array(
         "ro" => "Acasa",
         "az" => "",
         "ru" => "",
+        "de" => "Startseite",
     ),
     "The Center" => array(
         "en" => "The Center",
         "ro" => "Centrul",
         "az" => "",
         "ru" => "",
+        "de" => "Das Zentrum",
     ),
     "Procedures" => array(
         "en" => "Procedures",
         "ro" => "Tratamente",
         "az" => "",
         "ru" => "",
+        "de" => "Behandlungen",
     ),
     "Doctors" => array(
         "en" => "Doctors",
         "ro" => "Medicii",
         "az" => "",
         "ru" => "",
+        "de" => "Ärzte",
     ),
     "Contact" => array(
         "en" => "Contact",
         "ro" => "Contact",
         "az" => "",
         "ru" => "",
+        "de" => "Kontakt",
     ),
     "Appointment" => array(
         "en" => "Appointment",
         "ro" => "Programare",
         "az" => "",
         "ru" => "",
+        "de" => "Termin",
     ),
     "Appointment Description" => array(
         "en" => "Our team is ready to assist you with personalized care and expert guidance every step of the way.",
         "ro" => "Echipa noastră este pregătită să vă ajute cu îngrijire personalizată și îndrumări de specialitate la fiecare pas.",
         "az" => "",
         "ru" => "",
+        "de" => "Unser Team steht Ihnen bei jedem Schritt mit persönlicher Betreuung und fachkundiger Beratung zur Seite.",
     ),
     "Preferred Date" => array(
         "en" => "Preferred Date",
         "ro" => "Data",
         "az" => "",
         "ru" => "",
+        "de" => "Bevorzugtes Datum",
     ),
     "Get Started" => array(
         "en" => "Get Started",
         "ro" => "Începe acum",
         "az" => "",
         "ru" => "",
+        "de" => "Loslegen",
     ),
     "Get Answers" => array(
         "en" => "Get Answers",
         "ro" => "Obține răspunsul",
         "az" => "",
         "ru" => "",
+        "de" => "Antworten erhalten",
     ),
     "Video Title" => array(
         "en" => "Explore Our Center",
         "ro" => "Descoperă Centrul Nostru",
         "az" => "",
         "ru" => "",
+        "de" => "Entdecken Sie unser Zentrum",
     ),
     "Optional" => array(
         "en" => "Optional",
         "ro" => "opțional",
         "az" => "",
         "ru" => "",
+        "de" => "Optional",
     ),
     "Make an Appointment" => array(
         "en" => "Make an Appointment",
         "ro" => "Fă-ți o programare",
         "az" => "",
         "ru" => "",
+        "de" => "Einen Termin vereinbaren",
     ),
     "Doctors Description" => array(
         "en" => "Meet our dedicated team of experts at Acibadem Healthcare Group Hospitals, each specializing in cancer treatment. These skilled professionals are committed to offering compassionate, patient-focused care, combining their extensive knowledge with the latest technology.",
         "ro" => "Faceți cunoștință cu echipa noastră de experți de la Spitalele Acibadem Healthcare Group. Fiecare dintre aceşti doctori este specializat în tratamentul cancerului de sân. Acești profesioniști se angajează să ofere îngrijire, empatie,  combinând cunoștințele lor vaste cu cea mai recentă tehnologie.",
         "az" => "",
         "ru" => "",
+        "de" => "Lernen Sie unser engagiertes Expertenteam in den Krankenhäusern der Acibadem Healthcare Group kennen, das auf Krebsbehandlung spezialisiert ist. Diese qualifizierten Fachkräfte setzen sich für eine mitfühlende, patientenorientierte Versorgung ein und kombinieren ihr umfangreiches Wissen mit der neuesten Technologie.",
     ),
     "Schedule Appointment" => array(
         "en" => "Schedule Appointment",
         "ro" => "Fă-ți o programare",
         "az" => "",
         "ru" => "",
+        "de" => "Termin vereinbaren",
     ),
     "Talk to Doctor" => array(
         "en" => "Talk to Doctor",
         "ro" => "Vorbeste cu Medicul",
         "az" => "",
         "ru" => "",
+        "de" => "Mit einem Arzt sprechen",
     ),
     "Frequently Asked Questions" => array(
         "en" => "Frequently Asked Questions",
         "ro" => "Întrebări frecvente",
         "az" => "",
         "ru" => "",
+        "de" => "Häufig gestellte Fragen",
     ),
     "Gallery" => array(
         "en" => "Gallery",
         "ro" => "Galerie",
         "az" => "",
         "ru" => "",
+        "de" => "Galerie",
     ),
     "Contact Description" => array(
         "en" => "Acıbadem is one of the few extensive breast cancer centers worldwide that offers service to the most complex cancer cases. If you would like to learn more, you are encouraged to talk with us.",
         "ro" => "Acıbadem este unul dintre puținele centre extinse de cancer de sân din întreaga lume care oferă servicii pentru cele mai complexe cazuri de cancer. Dacă doriți să aflați mai multe, sunteți încurajat să ne contactați.",
         "az" => "",
         "ru" => "",
+        "de" => "Acıbadem ist eines der wenigen umfassenden Brustkrebszentren weltweit, das auch die komplexesten Krebsfälle behandelt. Wenn Sie mehr erfahren möchten, ermutigen wir Sie, mit uns zu sprechen.",
     ),
     "Whatsapp" => array(
         "en" => "Whatsapp",
         "ro" => "Whatsapp",
         "az" => "",
         "ru" => "",
+        "de" => "Whatsapp",
     ),
     "Call" => array(
         "en" => "Call",
         "ro" => "Telefon",
         "az" => "",
         "ru" => "",
+        "de" => "Anrufen",
     ),
     "Subject" => array(
         "en" => "Subject",
         "ro" => "Subiect",
         "az" => "",
         "ru" => "",
+        "de" => "Betreff",
     ),
     "Send Message" => array(
         "en" => "Send Message",
         "ro" => "Trimite Mesajul",
         "az" => "",
         "ru" => "",
+        "de" => "Nachricht senden",
     ),
+    "Package Details" => array(
+        "en" => "Package Details",
+        "ro" => "",
+        "az" => "",
+        "ru" => "",
+        "de" => "Paketdetails",
+    ),
+    "checkup_section_title" => array(
+        "en" => "Check-Up Packages",
+        "ro" => "",
+        "az" => "",
+        "ru" => "",
+        "de" => "Check-Up-Pakete",
+    ),
+    "checkup_section_subtitle" => array(
+        "en" => "",
+        "ro" => "",
+        "az" => "",
+        "ru" => "",
+        "de" => "",
+    ),
+    "modal_close_button" => array(
+        "en" => "Close",
+        "ro" => "",
+        "az" => "",
+        "ru" => "",
+        "de" => "Schließen",
+    ),
+    // Women Classic Check-Up
+    "women_classic_title" => array("en" => "Women Classic Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Damen Klassik Check-Up"),
+    "women_classic_description" => array("en" => "Our introductory package covering essential health checks.", "ro" => "", "az" => "", "ru" => "", "de" => "Unser Einsteigerpaket mit den wichtigsten Gesundheitschecks."),
+    "women_classic_detail_1_title" => array("en" => "Doctor Examination", "ro" => "", "az" => "", "ru" => "", "de" => "Ärztliche Untersuchung"),
+    "women_classic_detail_1_description" => array("en" => "General health assessment by an Internal Medicine specialist.", "ro" => "", "az" => "", "ru" => "", "de" => "Allgemeine Gesundheitsbeurteilung durch einen Facharzt für Innere Medizin."),
+    "women_classic_detail_2_title" => array("en" => "Blood Tests", "ro" => "", "az" => "", "ru" => "", "de" => "Blutuntersuchungen"),
+    "women_classic_detail_2_description" => array("en" => "Measurement of hemogram, blood sugar, cholesterol, and other basic values.", "ro" => "", "az" => "", "ru" => "", "de" => "Messung von Hämogramm, Blutzucker, Cholesterin und anderen Grundwerten."),
+    "women_classic_detail_3_title" => array("en" => "Urine Analysis", "ro" => "", "az" => "", "ru" => "", "de" => "Urinanalyse"),
+    "women_classic_detail_3_description" => array("en" => "Control of kidney and urinary tract functions with a complete urine analysis.", "ro" => "", "az" => "", "ru" => "", "de" => "Kontrolle der Nieren- und Harnwegsfunktionen mit einer vollständigen Urinanalyse."),
+
+    // Women Gold Check-Up
+    "women_gold_title" => array("en" => "Women Gold Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Damen Gold Check-Up"),
+    "women_gold_description" => array("en" => "Address your health from all angles with our most comprehensive package.", "ro" => "", "az" => "", "ru" => "", "de" => "Betrachten Sie Ihre Gesundheit aus allen Blickwinkeln mit unserem umfassendsten Paket."),
+    "women_gold_detail_1_title" => array("en" => "Advanced Cancer Screening", "ro" => "", "az" => "", "ru" => "", "de" => "Erweiterte Krebsvorsorge"),
+    "women_gold_detail_1_description" => array("en" => "Check for tumor markers such as CEA, CA 125, CA 15-3.", "ro" => "", "az" => "", "ru" => "", "de" => "Überprüfung auf Tumormarker wie CEA, CA 125, CA 15-3."),
+    "women_gold_detail_2_title" => array("en" => "Endocrinology", "ro" => "", "az" => "", "ru" => "", "de" => "Endokrinologie"),
+    "women_gold_detail_2_description" => array("en" => "Thyroid function tests (TSH, T3, T4).", "ro" => "", "az" => "", "ru" => "", "de" => "Schilddrüsenfunktionstests (TSH, T3, T4)."),
+    "women_gold_detail_3_title" => array("en" => "Neurology", "ro" => "", "az" => "", "ru" => "", "de" => "Neurologie"),
+    "women_gold_detail_3_description" => array("en" => "Neurological examination and evaluation when deemed necessary.", "ro" => "", "az" => "", "ru" => "", "de" => "Neurologische Untersuchung und Beurteilung bei Bedarf."),
+
+    // Women Executive Check-Up
+    "women_executive_title" => array("en" => "Women Executive Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Damen Executive Check-Up"),
+    "women_executive_description" => array("en" => "Identify your risks in advance with a comprehensive health screening.", "ro" => "", "az" => "", "ru" => "", "de" => "Identifizieren Sie Ihre Risiken im Voraus mit einer umfassenden Gesundheitsvorsorge."),
+    "women_executive_detail_1_title" => array("en" => "Cardiology", "ro" => "", "az" => "", "ru" => "", "de" => "Kardiologie"),
+    "women_executive_detail_1_description" => array("en" => "Detailed examination of your heart health with EKG and Stress Test.", "ro" => "", "az" => "", "ru" => "", "de" => "Detaillierte Untersuchung Ihrer Herzgesundheit mit EKG und Belastungstest."),
+    "women_executive_detail_2_title" => array("en" => "Radiology", "ro" => "", "az" => "", "ru" => "", "de" => "Radiologie"),
+    "women_executive_detail_2_description" => array("en" => "Imaging of organs with Chest X-ray and Full Abdominal USG.", "ro" => "", "az" => "", "ru" => "", "de" => "Bildgebung der Organe mit Röntgen-Thorax und Abdomen-Ultraschall."),
+    "women_executive_detail_3_title" => array("en" => "Gynecology", "ro" => "", "az" => "", "ru" => "", "de" => "Gynäkologie"),
+    "women_executive_detail_3_description" => array("en" => "Smear test and Gynecological examination.", "ro" => "", "az" => "", "ru" => "", "de" => "Abstrich und gynäkologische Untersuchung."),
+
+    // Men Classic Check-Up
+    "men_classic_title" => array("en" => "Men Classic Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Herren Klassik Check-Up"),
+    "men_classic_description" => array("en" => "Our introductory package covering essential health checks.", "ro" => "", "az" => "", "ru" => "", "de" => "Unser Einsteigerpaket mit den wichtigsten Gesundheitschecks."),
+    "men_classic_detail_1_title" => array("en" => "Doctor Examination", "ro" => "", "az" => "", "ru" => "", "de" => "Ärztliche Untersuchung"),
+    "men_classic_detail_1_description" => array("en" => "General health assessment by an Internal Medicine specialist.", "ro" => "", "az" => "", "ru" => "", "de" => "Allgemeine Gesundheitsbeurteilung durch einen Facharzt für Innere Medizin."),
+    "men_classic_detail_2_title" => array("en" => "Blood Tests", "ro" => "", "az" => "", "ru" => "", "de" => "Blutuntersuchungen"),
+    "men_classic_detail_2_description" => array("en" => "Measurement of hemogram, blood sugar, cholesterol, and other basic values.", "ro" => "", "az" => "", "ru" => "", "de" => "Messung von Hämogramm, Blutzucker, Cholesterin und anderen Grundwerten."),
+    "men_classic_detail_3_title" => array("en" => "Urine Analysis", "ro" => "", "az" => "", "ru" => "", "de" => "Urinanalyse"),
+    "men_classic_detail_3_description" => array("en" => "Control of kidney and urinary tract functions with a complete urine analysis.", "ro" => "", "az" => "", "ru" => "", "de" => "Kontrolle der Nieren- und Harnwegsfunktionen mit einer vollständigen Urinanalyse."),
+
+    // Men Gold Check-Up
+    "men_gold_title" => array("en" => "Men Gold Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Herren Gold Check-Up"),
+    "men_gold_description" => array("en" => "Address your health from all angles with our most comprehensive package.", "ro" => "", "az" => "", "ru" => "", "de" => "Betrachten Sie Ihre Gesundheit aus allen Blickwinkeln mit unserem umfassendsten Paket."),
+    "men_gold_detail_1_title" => array("en" => "Advanced Cancer Screening", "ro" => "", "az" => "", "ru" => "", "de" => "Erweiterte Krebsvorsorge"),
+    "men_gold_detail_1_description" => array("en" => "Check for tumor markers such as CEA, AFP.", "ro" => "", "az" => "", "ru" => "", "de" => "Überprüfung auf Tumormarker wie CEA, AFP."),
+    "men_gold_detail_2_title" => array("en" => "Endocrinology", "ro" => "", "az" => "", "ru" => "", "de" => "Endokrinologie"),
+    "men_gold_detail_2_description" => array("en" => "Thyroid function tests (TSH, T3, T4).", "ro" => "", "az" => "", "ru" => "", "de" => "Schilddrüsenfunktionstests (TSH, T3, T4)."),
+    "men_gold_detail_3_title" => array("en" => "Neurology", "ro" => "", "az" => "", "ru" => "", "de" => "Neurologie"),
+    "men_gold_detail_3_description" => array("en" => "Neurological examination and evaluation when deemed necessary.", "ro" => "", "az" => "", "ru" => "", "de" => "Neurologische Untersuchung und Beurteilung bei Bedarf."),
+
+    // Men Executive Check-Up
+    "men_executive_title" => array("en" => "Men Executive Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Herren Executive Check-Up"),
+    "men_executive_description" => array("en" => "Identify your risks in advance with a comprehensive health screening.", "ro" => "", "az" => "", "ru" => "", "de" => "Identifizieren Sie Ihre Risiken im Voraus mit einer umfassenden Gesundheitsvorsorge."),
+    "men_executive_detail_1_title" => array("en" => "Cardiology", "ro" => "", "az" => "", "ru" => "", "de" => "Kardiologie"),
+    "men_executive_detail_1_description" => array("en" => "Detailed examination of your heart health with EKG and Stress Test.", "ro" => "", "az" => "", "ru" => "", "de" => "Detaillierte Untersuchung Ihrer Herzgesundheit mit EKG und Belastungstest."),
+    "men_executive_detail_2_title" => array("en" => "Radiology", "ro" => "", "az" => "", "ru" => "", "de" => "Radiologie"),
+    "men_executive_detail_2_description" => array("en" => "Imaging of organs with Chest X-ray and Full Abdominal USG.", "ro" => "", "az" => "", "ru" => "", "de" => "Bildgebung der Organe mit Röntgen-Thorax und Abdomen-Ultraschall."),
+    "men_executive_detail_3_title" => array("en" => "Urology", "ro" => "", "az" => "", "ru" => "", "de" => "Urologie"),
+    "men_executive_detail_3_description" => array("en" => "PSA (Prostate-Specific Antigen) test and urological examination.", "ro" => "", "az" => "", "ru" => "", "de" => "PSA (Prostataspezifisches Antigen)-Test und urologische Untersuchung."),
 );
 
 $lp_stats_numbers = get_field("lp_stats_numbers");
@@ -296,7 +409,7 @@ $related_doctors = get_field('lp_related_doctors');
                             </div>
                             <div class="form-group mt-3"><select name="CountryId" id="f1country" class="form-select" required="">
                                     <option value=""><?= the_field('f_country', 'option'); ?></option>
-                                    <option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoire</option><option value="53">Croatia</option><option value="54">Cuba</option><option value="155">Curaçao</option><option value="55">Cyprus</option><option value="56">Czechia</option><option value="246">Democratic Republic of the Congo</option><option value="57">Denmark</option><option value="58">Djibouti</option><option value="59">Dominica</option><option value="60">Dominican Republic</option><option value="62">Ecuador</option><option value="63">Egypt</option><option value="64">El Salvador</option><option value="65">England</option><option value="66">Equatorial Guinea</option><option value="67">Eritrea</option><option value="68">Estonia</option><option value="210">Eswatini</option><option value="69">Ethiopia</option><option value="70">Falkland Islands</option><option value="71">Faroe Islands</option><option value="72">Fiji</option><option value="74">Finland</option><option value="75">France</option><option value="77">French Guiana</option><option value="78">French Polynesia</option><option value="80">Gabon</option><option value="81">Gambia</option><option value="82">Georgia</option><option value="83">Germany</option><option value="84">Ghana</option><option value="85">Gibraltar</option><option value="86">Greece</option><option value="87">Greenland</option><option value="88">Grenada</option><option value="89">Guadeloupe</option><option value="90">Guam</option><option value="91">Guatemala</option><option value="92">Guinea</option><option value="93">Guinea-Bissau</option><option value="94">Guyana</option><option value="95">Haiti</option><option value="97">Honduras</option><option value="98">Hong Kong</option><option value="99">Hungary</option><option value="100">Iceland</option><option value="101">India</option><option value="102">Indonesia</option><option value="104">Iraq</option><option value="105">Ireland</option><option value="103">Islamic Republic of Iran</option><option value="106">Israel</option><option value="107">Italy</option><option value="108">Jamaica</option><option value="278">Japan</option><option value="110">Jordan</option><option value="111">Kazakhstan</option><option value="112">Kenya</option><option value="113">Kiribati</option><option value="250">Kosovo</option><option value="116">Kuwait</option><option value="117">Kyrgyzstan</option><option value="119">Lao People's Democratic Republic</option><option value="120">Latvia</option><option value="121">Lebanon</option><option value="122">Lesotho</option><option value="124">Liberia</option><option value="125">Libya</option><option value="126">Liechtenstein</option><option value="127">Lithuania</option><option value="128">Luxembourg</option><option value="129">Macao</option><option value="131">Madagascar</option><option value="132">Malawi</option><option value="133">Malaysia</option><option value="277">Maldives</option><option value="135">Mali</option><option value="136">Malta</option><option value="137">Marshall Islands</option><option value="138">Martinique</option><option value="139">Mauritania</option><option value="276">Mauritius</option><option value="141">Mayotte</option><option value="142">Mexico</option><option value="143">Micronesia</option><option value="144">Moldova</option><option value="145">Monaco</option><option value="146">Mongolia</option><option value="249">Montenegro</option><option value="147">Montserrat</option><option value="148">Morocco</option><option value="149">Mozambique</option><option value="150">Myanmar</option><option value="151">Namibia</option><option value="152">Nauru</option><option value="153">Nepal</option><option value="154">Netherlands</option><option value="156">New Caledonia</option><option value="157">New Zealand</option><option value="158">Nicaragua</option><option value="159">Niger</option><option value="160">Nigeria</option><option value="161">Niue</option><option value="162">Norfolk Island</option><option value="114">North Korea (Democratic People's Republic of Korea)</option><option value="130">North Macedonia</option><option value="163">Northern Cyprus (Turkish Republic of Northern Cyprus)</option><option value="164">Northern Mariana Islands</option><option value="165">Norway</option><option value="166">Oman</option><option value="167">Pakistan</option><option value="168">Palau</option><option value="73">Palestine</option><option value="169">Panama</option><option value="170">Papua New Guinea</option><option value="171">Paraguay</option><option value="172">Peru</option><option value="173">Philippines</option><option value="175">Poland</option><option value="176">Portugal</option><option value="177">Puerto Rico</option><option value="178">Qatar</option><option value="115">Republic of Korea</option><option value="179">Reunion</option><option value="180">Romania</option><option value="181">Russian Federation</option><option value="183">Rwanda</option><option value="205">Saint Helena, Ascension and Tristan da Cunha</option><option value="184">Saint Kitts and Nevis</option><option value="185">Saint Lucia</option><option value="206">Saint Pierre and Miquelon</option><option value="186">Saint Vincent and the Grenadines</option><option value="187">Samoa</option><option value="188">San Marino</option><option value="189">Sao Tome and Principe</option><option value="190">Saudi Arabia</option><option value="191">Scotland</option><option value="192">Senegal</option><option value="251">Serbia</option><option value="194">Seychelles</option><option value="195">Sierra Leone</option><option value="196">Singapore</option><option value="197">Slovakia</option><option value="198">Slovenia</option><option value="199">Solomon Islands</option><option value="200">Somalia</option><option value="201">South Africa</option><option value="279">South Sudan</option><option value="203">Spain</option><option value="204">Sri Lanka</option><option value="207">Sudan</option><option value="208">Suriname</option><option value="209">Svalbard and Jan Mayen</option><option value="211">Sweden</option><option value="212">Switzerland</option><option value="213">Syrian Arab Republic</option><option value="214">Taiwan</option><option value="215">Tajikistan</option><option value="216">Tanzania</option><option value="217">Thailand</option><option value="61">Timor-Leste</option><option value="218">Togo</option><option value="219">Tokelau</option><option value="220">Tonga</option><option value="221">Trinidad and Tobago</option><option value="222">Tunisia</option><option value="224">Turkmenistan</option><option value="225">Turks and Caicos Islands</option><option value="226">Tuvalu</option><option value="223">Türkiye</option><option value="228">Uganda</option><option value="229">Ukraine</option><option value="230">United Arab Emirates</option><option value="231">United Kingdom</option><option value="227">United States of America</option><option value="233">Uruguay</option><option value="235">Uzbekistan</option><option value="236">Vanuatu</option><option value="238">Venezuela</option><option value="239">Viet Nam</option><option value="240">Virgin Islands (British)</option><option value="241">Virgin Islands (U.S.)</option><option value="242">Wales</option><option value="243">Wallis and Futuna</option><option value="245">Yemen</option><option value="247">Zambia</option><option value="248">Zimbabwe</option>
+                                    <option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoire</option><option value="53">Croatia</option><option... [truncated]
                                 </select></div>
                             <div class="form-group mt-3"><input type="text" class="form-control" name="Phone" id="f1phone" placeholder="<?= the_field('f_phone', 'option'); ?>"></div>
                             <div class="form-group mt-3"><input type="text" class="form-control" name="Mail" id="f1mail" placeholder="<?= the_field('f_email', 'option'); ?>"></div>
@@ -375,11 +488,12 @@ $related_doctors = get_field('lp_related_doctors');
     </section>
     <section id="departments" class="departments">
         <div class="container">
-            <?php 
-            // Check if the page type is 'check-up'
-            if (function_exists('get_field') && get_field('treatment_page_type') == 'check-up') :
-                // Load the check-up packages partial
-                get_template_part('templates/partials/section-checkup-packages');
+            <?php
+            global $post;
+            // Check if the post slug contains 'checkup'
+            if (isset($post) && strpos($post->post_name, 'checkup') !== false) :
+                // Use a direct include with the full path for plugins
+                include WP_PLUGIN_DIR . '/asguhm-lp-treatment/templates/partials/section-checkup-packages.php';
             else : 
                 // This is not a check-up page, so display the default content
             ?>
@@ -416,7 +530,7 @@ $related_doctors = get_field('lp_related_doctors');
                     </div>
                     <div class="col-md-4 form-group mt-3"><select required name="CountryId" id="f2country" class="form-select">
                             <option value=""><?= the_field('f_country', 'option'); ?></option>
-                            <option value="" selected="" disabled="">Country</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoire</option><option value="53">Croatia</option><option value="54">Cuba</option><option value="155">Curaçao</option><option value="55">Cyprus</option><option value="56">Czechia</option><option value="246">Democratic Republic of the Congo</option><option value="57">Denmark</option><option value="58">Djibouti</option><option value="59">Dominica</option><option value="60">Dominican Republic</option><option value="62">Ecuador</option><option value="63">Egypt</option><option value="64">El Salvador</option><option value="65">England</option><option value="66">Equatorial Guinea</option><option value="67">Eritrea</option><option value="68">Estonia</option><option value="210">Eswatini</option><option value="69">Ethiopia</option><option value="70">Falkland Islands</option><option value="71">Faroe Islands</option><option value="72">Fiji</option><option value="74">Finland</option><option value="75">France</option><option value="77">French Guiana</option><option value="78">French Polynesia</option><option value="80">Gabon</option><option value="81">Gambia</option><option value="82">Georgia</option><option value="83">Germany</option><option value="84">Ghana</option><option value="85">Gibraltar</option><option value="86">Greece</option><option value="87">Greenland</option><option value="88">Grenada</option><option value="89">Guadeloupe</option><option value="90">Guam</option><option value="91">Guatemala</option><option value="92">Guinea</option><option value="93">Guinea-Bissau</option><option value="94">Guyana</option><option value="95">Haiti</option><option value="97">Honduras</option><option value="98">Hong Kong</option><option value="99">Hungary</option><option value="100">Iceland</option><option value="101">India</option><option value="102">Indonesia</option><option value="104">Iraq</option><option value="105">Ireland</option><option value="103">Islamic Republic of Iran</option><option value="106">Israel</option><option value="107">Italy</option><option value="108">Jamaica</option><option value="278">Japan</option><option value="110">Jordan</option><option value="111">Kazakhstan</option><option value="112">Kenya</option><option value="113">Kiribati</option><option value="250">Kosovo</option><option value="116">Kuwait</option><option value="117">Kyrgyzstan</option><option value="119">Lao People's Democratic Republic</option><option value="120">Latvia</option><option value="121">Lebanon</option><option value="122">Lesotho</option><option value="124">Liberia</option><option value="125">Libya</option><option value="126">Liechtenstein</option><option value="127">Lithuania</option><option value="128">Luxembourg</option><option value="129">Macao</option><option value="131">Madagascar</option><option value="132">Malawi</option><option value="133">Malaysia</option><option value="277">Maldives</option><option value="135">Mali</option><option value="136">Malta</option><option value="137">Marshall Islands</option><option value="138">Martinique</option><option value="139">Mauritania</option><option value="276">Mauritius</option><option value="141">Mayotte</option><option value="142">Mexico</option><option value="143">Micronesia</option><option value="144">Moldova</option><option value="145">Monaco</option><option value="146">Mongolia</option><option value="249">Montenegro</option><option value="147">Montserrat</option><option value="148">Morocco</option><option value="149">Mozambique</option><option value="150">Myanmar</option><option value="151">Namibia</option><option value="152">Nauru</option><option value="153">Nepal</option><option value="154">Netherlands</option><option value="156">New Caledonia</option><option value="157">New Zealand</option><option value="158">Nicaragua</option><option value="159">Niger</option><option value="160">Nigeria</option><option value="161">Niue</option><option value="162">Norfolk Island</option><option value="114">North Korea (Democratic People's Republic of Korea)</option><option value="130">North Macedonia</option><option value="163">Northern Cyprus (Turkish Republic of Northern Cyprus)</option><option value="164">Northern Mariana Islands</option><option value="165">Norway</option><option value="166">Oman</option><option value="167">Pakistan</option><option value="168">Palau</option><option value="73">Palestine</option><option value="169">Panama</option><option value="170">Papua New Guinea</option><option value="171">Paraguay</option><option value="172">Peru</option><option value="173">Philippines</option><option value="175">Poland</option><option value="176">Portugal</option><option value="177">Puerto Rico</option><option value="178">Qatar</option><option value="115">Republic of Korea</option><option value="179">Reunion</option><option value="180">Romania</option><option value="181">Russian Federation</option><option value="183">Rwanda</option><option value="205">Saint Helena, Ascension and Tristan da Cunha</option><option value="184">Saint Kitts and Nevis</option><option value="185">Saint Lucia</option><option value="206">Saint Pierre and Miquelon</option><option value="186">Saint Vincent and the Grenadines</option><option value="187">Samoa</option><option value="188">San Marino</option><option value="189">Sao Tome and Principe</option><option value="190">Saudi Arabia</option><option value="191">Scotland</option><option value="192">Senegal</option><option value="251">Serbia</option><option value="194">Seychelles</option><option value="195">Sierra Leone</option><option value="196">Singapore</option><option value="197">Slovakia</option><option value="198">Slovenia</option><option value="199">Solomon Islands</option><option value="200">Somalia</option><option value="201">South Africa</option><option value="279">South Sudan</option><option value="203">Spain</option><option value="204">Sri Lanka</option><option value="207">Sudan</option><option value="208">Suriname</option><option value="209">Svalbard and Jan Mayen</option><option value="211">Sweden</option><option value="212">Switzerland</option><option value="213">Syrian Arab Republic</option><option value="214">Taiwan</option><option value="215">Tajikistan</option><option value="216">Tanzania</option><option value="217">Thailand</option><option value="61">Timor-Leste</option><option value="218">Togo</option><option value="219">Tokelau</option><option value="220">Tonga</option><option value="221">Trinidad and Tobago</option><option value="222">Tunisia</option><option value="224">Turkmenistan</option><option value="225">Turks and Caicos Islands</option><option value="226">Tuvalu</option><option value="223">Türkiye</option><option value="228">Uganda</option><option value="229">Ukraine</option><option value="230">United Arab Emirates</option><option value="231">United Kingdom</option><option value="227">United States of America</option><option value="233">Uruguay</option><option value="235">Uzbekistan</option><option value="236">Vanuatu</option><option value="238">Venezuela</option><option value="239">Viet Nam</option><option value="240">Virgin Islands (British)</option><option value="241">Virgin Islands (U.S.)</option><option value="242">Wales</option><option value="243">Wallis and Futuna</option><option value="245">Yemen</option><option value="247">Zambia</option><option value="248">Zimbabwe</option>
+                            <option value="" selected="" disabled="">Country</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoire</... [truncated]
                         </select>
                     </div>
                     <div class="col-md-4 form-group mt-3"><input type="text" name="pdate" class="form-control" id="f2pdate" placeholder="<?= $translations["Preferred Date"][$site] ?>">
@@ -638,7 +752,7 @@ $related_doctors = get_field('lp_related_doctors');
                         <div class="form-group mt-3">
                             <select name="CountryId" id="country" class="form-select form-control" required="">
                                 <option value=""><?= the_field('f_country', 'option'); ?></option>
-                                <option value="" selected="" disabled="">Country</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoire</option><option value="53">Croatia</option><option value="54">Cuba</option><option value="155">Curaçao</option><option value="55">Cyprus</option><option value="56">Czechia</option><option value="246">Democratic Republic of the Congo</option><option value="57">Denmark</option><option value="58">Djibouti</option><option value="59">Dominica</option><option value="60">Dominican Republic</option><option value="62">Ecuador</option><option value="63">Egypt</option><option value="64">El Salvador</option><option value="65">England</option><option value="66">Equatorial Guinea</option><option value="67">Eritrea</option><option value="68">Estonia</option><option value="210">Eswatini</option><option value="69">Ethiopia</option><option value="70">Falkland Islands</option><option value="71">Faroe Islands</option><option value="72">Fiji</option><option value="74">Finland</option><option value="75">France</option><option value="77">French Guiana</option><option value="78">French Polynesia</option><option value="80">Gabon</option><option value="81">Gambia</option><option value="82">Georgia</option><option value="83">Germany</option><option value="84">Ghana</option><option value="85">Gibraltar</option><option value="86">Greece</option><option value="87">Greenland</option><option value="88">Grenada</option><option value="89">Guadeloupe</option><option value="90">Guam</option><option value="91">Guatemala</option><option value="92">Guinea</option><option value="93">Guinea-Bissau</option><option value="94">Guyana</option><option value="95">Haiti</option><option value="97">Honduras</option><option value="98">Hong Kong</option><option value="99">Hungary</option><option value="100">Iceland</option><option value="101">India</option><option value="102">Indonesia</option><option value="104">Iraq</option><option value="105">Ireland</option><option value="103">Islamic Republic of Iran</option><option value="106">Israel</option><option value="107">Italy</option><option value="108">Jamaica</option><option value="278">Japan</option><option value="110">Jordan</option><option value="111">Kazakhstan</option><option value="112">Kenya</option><option value="113">Kiribati</option><option value="250">Kosovo</option><option value="116">Kuwait</option><option value="117">Kyrgyzstan</option><option value="119">Lao People's Democratic Republic</option><option value="120">Latvia</option><option value="121">Lebanon</option><option value="122">Lesotho</option><option value="124">Liberia</option><option value="125">Libya</option><option value="126">Liechtenstein</option><option value="127">Lithuania</option><option value="128">Luxembourg</option><option value="129">Macao</option><option value="131">Madagascar</option><option value="132">Malawi</option><option value="133">Malaysia</option><option value="277">Maldives</option><option value="135">Mali</option><option value="136">Malta</option><option value="137">Marshall Islands</option><option value="138">Martinique</option><option value="139">Mauritania</option><option value="276">Mauritius</option><option value="141">Mayotte</option><option value="142">Mexico</option><option value="143">Micronesia</option><option value="144">Moldova</option><option value="145">Monaco</option><option value="146">Mongolia</option><option value="249">Montenegro</option><option value="147">Montserrat</option><option value="148">Morocco</option><option value="149">Mozambique</option><option value="150">Myanmar</option><option value="151">Namibia</option><option value="152">Nauru</option><option value="153">Nepal</option><option value="154">Netherlands</option><option value="156">New Caledonia</option><option value="157">New Zealand</option><option value="158">Nicaragua</option><option value="159">Niger</option><option value="160">Nigeria</option><option value="161">Niue</option><option value="162">Norfolk Island</option><option value="114">North Korea (Democratic People's Republic of Korea)</option><option value="130">North Macedonia</option><option value="163">Northern Cyprus (Turkish Republic of Northern Cyprus)</option><option value="164">Northern Mariana Islands</option><option value="165">Norway</option><option value="166">Oman</option><option value="167">Pakistan</option><option value="168">Palau</option><option value="73">Palestine</option><option value="169">Panama</option><option value="170">Papua New Guinea</option><option value="171">Paraguay</option><option value="172">Peru</option><option value="173">Philippines</option><option value="175">Poland</option><option value="176">Portugal</option><option value="177">Puerto Rico</option><option value="178">Qatar</option><option value="115">Republic of Korea</option><option value="179">Reunion</option><option value="180">Romania</option><option value="181">Russian Federation</option><option value="183">Rwanda</option><option value="205">Saint Helena, Ascension and Tristan da Cunha</option><option value="184">Saint Kitts and Nevis</option><option value="185">Saint Lucia</option><option value="206">Saint Pierre and Miquelon</option><option value="186">Saint Vincent and the Grenadines</option><option value="187">Samoa</option><option value="188">San Marino</option><option value="189">Sao Tome and Principe</option><option value="190">Saudi Arabia</option><option value="191">Scotland</option><option value="192">Senegal</option><option value="251">Serbia</option><option value="194">Seychelles</option><option value="195">Sierra Leone</option><option value="196">Singapore</option><option value="197">Slovakia</option><option value="198">Slovenia</option><option value="199">Solomon Islands</option><option value="200">Somalia</option><option value="201">South Africa</option><option value="279">South Sudan</option><option value="203">Spain</option><option value="204">Sri Lanka</option><option value="207">Sudan</option><option value="208">Suriname</option><option value="209">Svalbard and Jan Mayen</option><option value="211">Sweden</option><option value="212">Switzerland</option><option value="213">Syrian Arab Republic</option><option value="214">Taiwan</option><option value="215">Tajikistan</option><option value="216">Tanzania</option><option value="217">Thailand</option><option value="61">Timor-Leste</option><option value="218">Togo</option><option value="219">Tokelau</option><option value="220">Tonga</option><option value="221">Trinidad and Tobago</option><option value="222">Tunisia</option><option value="224">Turkmenistan</option><option value="225">Turks and Caicos Islands</option><option value="226">Tuvalu</option><option value="223">Türkiye</option><option value="228">Uganda</option><option value="229">Ukraine</option><option value="230">United Arab Emirates</option><option value="231">United Kingdom</option><option value="227">United States of America</option><option value="233">Uruguay</option><option value="235">Uzbekistan</option><option value="236">Vanuatu</option><option value="238">Venezuela</option><option value="239">Viet Nam</option><option value="240">Virgin Islands (British)</option><option value="241">Virgin Islands (U.S.)</option><option value="242">Wales</option><option value="243">Wallis and Futuna</option><option value="245">Yemen</option><option value="247">Zambia</option><option value="248">Zimbabwe</option>
+                                <option value="" selected="" disabled="">Country</option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Australia</option><option value="14">Austria</option><option value="15">Azerbaijan</option><option value="16">Bahamas</option><option value="17">Bahrain</option><option value="18">Bangladesh</option><option value="19">Barbados</option><option value="20">Belarus</option><option value="21">Belgium</option><option value="22">Belize</option><option value="23">Benin</option><option value="24">Bermuda</option><option value="25">Bhutan</option><option value="26">Bolivia</option><option value="265">Bosnia and Herzegovina</option><option value="28">Botswana</option><option value="30">Brazil</option><option value="31">British Indian Ocean Territory</option><option value="32">Brunei Darussalam</option><option value="33">Bulgaria</option><option value="34">Burkina Faso</option><option value="35">Burundi</option><option value="39">Cabo Verde</option><option value="36">Cambodia</option><option value="37">Cameroon</option><option value="38">Canada</option><option value="40">Cayman Islands</option><option value="41">Central African Republic</option><option value="42">Chad</option><option value="43">Chile</option><option value="271">China</option><option value="45">Christmas Island</option><option value="46">Cocos (Keeling) Islands</option><option value="47">Colombia</option><option value="48">Comoros</option><option value="49">Congo</option><option value="50">Cook Islands</option><option value="51">Costa Rica</option><option value="52">Cote d'Ivoi... [truncated]
                             </select>
                         </div>
                         <div class="form-group mt-3"><textarea class="form-control" name="Message" rows="5" placeholder="<?= the_field('f_message', 'option'); ?>"></textarea></div>
