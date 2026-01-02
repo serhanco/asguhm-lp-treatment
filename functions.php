@@ -213,3 +213,44 @@ function asguhm_lp_test_mode_admin_notice() {
     }
 }
 add_action('admin_notices', 'asguhm_lp_test_mode_admin_notice');
+
+function parse_package_csv($file_path) {
+    $packages_dir = plugin_dir_path(__FILE__);
+    $full_path = $packages_dir . $file_path;
+
+    if (!file_exists($full_path)) {
+        return [];
+    }
+
+    $lines = file($full_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if ($lines === false) {
+        return [];
+    }
+
+    $details = [];
+    $current_group = null;
+
+    foreach ($lines as $line) {
+        $trimmed_line = trim($line);
+        // Heuristic: A line is a subheading if it's all-caps and contains only letters and spaces.
+        if (preg_match('/^[A-Z\s]{5,}$/', $trimmed_line)) {
+            // If we have a current group, push it to details before starting a new one.
+            if ($current_group !== null) {
+                $details[] = $current_group;
+            }
+            // Start a new group
+            $current_group = ['title' => ucwords(strtolower($trimmed_line)), 'items' => []];
+        } elseif ($current_group !== null && !empty($trimmed_line)) {
+            // Add item to the current group
+            $current_group['items'][] = $trimmed_line;
+        }
+    }
+
+    // Add the last group to the details array
+    if ($current_group !== null) {
+        $details[] = $current_group;
+    }
+
+    return $details;
+}
+

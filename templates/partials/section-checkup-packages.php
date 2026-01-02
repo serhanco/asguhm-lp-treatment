@@ -3,7 +3,7 @@
 // It provides the URL to the plugin's root directory.
 global $plugin_dir, $translations, $site;
 
-// Static package data array. No longer dependent on ACF.
+// Dynamic package data array. Details are now loaded from CSV files.
 $packages = [
     // Women
     [
@@ -13,11 +13,7 @@ $packages = [
         'description_key' => 'women_classic_description',
         'price' => '',
         'modal_id' => 'modal-women-classic',
-        'details' => [
-            ['title_key' => 'women_classic_detail_1_title', 'description_key' => 'women_classic_detail_1_description'],
-            ['title_key' => 'women_classic_detail_2_title', 'description_key' => 'women_classic_detail_2_description'],
-            ['title_key' => 'women_classic_detail_3_title', 'description_key' => 'women_classic_detail_3_description'],
-        ]
+        'details' => parse_package_csv('Classic Women.csv')
     ],
     [
         'title_key' => 'women_gold_title',
@@ -26,11 +22,7 @@ $packages = [
         'description_key' => 'women_gold_description',
         'price' => '',
         'modal_id' => 'modal-women-gold',
-        'details' => [
-            ['title_key' => 'women_gold_detail_1_title', 'description_key' => 'women_gold_detail_1_description'],
-            ['title_key' => 'women_gold_detail_2_title', 'description_key' => 'women_gold_detail_2_description'],
-            ['title_key' => 'women_gold_detail_3_title', 'description_key' => 'women_gold_detail_3_description'],
-        ]
+        'details' => parse_package_csv('Gold Women.csv')
     ],
     [
         'title_key' => 'women_executive_title',
@@ -39,11 +31,7 @@ $packages = [
         'description_key' => 'women_executive_description',
         'price' => '',
         'modal_id' => 'modal-women-executive',
-        'details' => [
-            ['title_key' => 'women_executive_detail_1_title', 'description_key' => 'women_executive_detail_1_description'],
-            ['title_key' => 'women_executive_detail_2_title', 'description_key' => 'women_executive_detail_2_description'],
-            ['title_key' => 'women_executive_detail_3_title', 'description_key' => 'women_executive_detail_3_description'],
-        ]
+        'details' => parse_package_csv('Executive Women.csv')
     ],
     // Men
     [
@@ -53,11 +41,7 @@ $packages = [
         'description_key' => 'men_classic_description',
         'price' => '',
         'modal_id' => 'modal-men-classic',
-        'details' => [
-            ['title_key' => 'men_classic_detail_1_title', 'description_key' => 'men_classic_detail_1_description'],
-            ['title_key' => 'men_classic_detail_2_title', 'description_key' => 'men_classic_detail_2_description'],
-            ['title_key' => 'men_classic_detail_3_title', 'description_key' => 'men_classic_detail_3_description'],
-        ]
+        'details' => parse_package_csv('Classic Men.csv')
     ],
     [
         'title_key' => 'men_gold_title',
@@ -66,11 +50,7 @@ $packages = [
         'description_key' => 'men_gold_description',
         'price' => '',
         'modal_id' => 'modal-men-gold',
-        'details' => [
-            ['title_key' => 'men_gold_detail_1_title', 'description_key' => 'men_gold_detail_1_description'],
-            ['title_key' => 'men_gold_detail_2_title', 'description_key' => 'men_gold_detail_2_description'],
-            ['title_key' => 'men_gold_detail_3_title', 'description_key' => 'men_gold_detail_3_description'],
-        ]
+        'details' => parse_package_csv('Gold Men.csv')
     ],
     [
         'title_key' => 'men_executive_title',
@@ -79,11 +59,7 @@ $packages = [
         'description_key' => 'men_executive_description',
         'price' => '',
         'modal_id' => 'modal-men-executive',
-        'details' => [
-            ['title_key' => 'men_executive_detail_1_title', 'description_key' => 'men_executive_detail_1_description'],
-            ['title_key' => 'men_executive_detail_2_title', 'description_key' => 'men_executive_detail_2_description'],
-            ['title_key' => 'men_executive_detail_3_title', 'description_key' => 'men_executive_detail_3_description'],
-        ]
+        'details' => parse_package_csv('Executive Men.csv')
     ],
 ];
 ?>
@@ -131,24 +107,34 @@ $packages = [
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
+                <?php if (!empty($package['details'])) : ?>
                 <div class="accordion modal-accordion" id="accordion-<?php echo esc_attr($package['modal_id']); ?>">
                     <?php foreach ($package['details'] as $sub_index => $detail) : 
-                        $collapse_id = 'collapse-' . $index . '-' . $sub_index;
+                        $collapse_id = 'collapse-' . esc_attr($package['modal_id']) . '-' . $sub_index;
                     ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id; ?>">
-                                <?php echo esc_html($translations[$detail['title_key']][$site]); ?>
+                                <?php echo esc_html($detail['title']); ?>
                             </button>
                         </h2>
                         <div id="<?php echo $collapse_id; ?>" class="accordion-collapse collapse" data-bs-parent="#accordion-<?php echo esc_attr($package['modal_id']); ?>">
                             <div class="accordion-body">
-                                <?php echo esc_html($translations[$detail['description_key']][$site]); ?>
+                                <?php if (!empty($detail['items'])) : ?>
+                                    <ul>
+                                        <?php foreach ($detail['items'] as $item) : ?>
+                                            <li><?php echo esc_html($item); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
                 </div>
+                <?php else : ?>
+                    <p>Package details are not available at the moment. Please check back later.</p>
+                <?php endif; ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $translations["modal_close_button"][$site] ?></button>
