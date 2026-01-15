@@ -132,43 +132,53 @@
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
-      e.preventDefault()
+      e.preventDefault();
 
-      // Custom logic for modal buttons
       const isModalButton = this.classList.contains('btn-apply') || this.classList.contains('btn-appointment');
+
+      // Always handle mobile nav collapse
+      let navbar = select('#navbar');
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile');
+        let navbarToggle = select('.mobile-nav-toggle');
+        navbarToggle.classList.toggle('bi-list');
+        navbarToggle.classList.toggle('bi-x');
+      }
+
       if (isModalButton) {
         const modal = this.closest('.modal');
         if (modal) {
+          // --- Form Population Logic ---
           const title = modal.querySelector('.modal-title').textContent.replace(' Details', '').trim();
           let targetTextarea;
-
           if (this.classList.contains('btn-apply')) {
             targetTextarea = select('#f1message');
           } else {
             targetTextarea = select('#f2message');
           }
-
           if (targetTextarea) {
             targetTextarea.value = `I am interested in the ${title} package.`;
           }
           
+          // --- Modal Hide and Scroll Logic ---
           const modalInstance = bootstrap.Modal.getInstance(modal);
+          const hash = this.hash;
+
+          // Wait for modal to be completely hidden, then scroll
+          modal.addEventListener('hidden.bs.modal', function() {
+            scrollto(hash);
+          }, { once: true }); // Use { once: true } to auto-remove listener
+
           if (modalInstance) {
             modalInstance.hide();
           }
         }
+      } else {
+        // For all non-modal .scrollto links, scroll immediately
+        scrollto(this.hash);
       }
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
     }
-  }, true)
+  }, true);
 
   /**
    * Scroll with ofset on page load with hash links in the url
