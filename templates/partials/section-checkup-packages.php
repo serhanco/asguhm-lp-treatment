@@ -1,67 +1,69 @@
 <?php
-// This variable is expected to be defined in the parent template (single_treatment-lp.php)
-// It provides the URL to the plugin's root directory.
 global $plugin_dir, $translations, $site;
 
-// Dynamic package data array. Details are now loaded from CSV files.
-$packages = [
-    // Women
-    [
+// Get the detailed package data from our new data file
+$all_package_data = get_package_data();
+
+// Configuration for the packages to be displayed
+$packages_config = [
+    'women_classic' => [
         'title_key' => 'women_classic_title',
         'gender' => 'women',
         'image' => 'women_classic.webp',
         'description_key' => 'women_classic_description',
         'price' => '',
         'modal_id' => 'modal-women-classic',
-        'details' => parse_package_csv('Classic Women.csv')
     ],
-    [
+    'women_gold' => [
         'title_key' => 'women_gold_title',
         'gender' => 'women',
         'image' => 'women_gold.webp',
         'description_key' => 'women_gold_description',
         'price' => '',
         'modal_id' => 'modal-women-gold',
-        'details' => parse_package_csv('Gold Women.csv')
     ],
-    [
+    'women_executive' => [
         'title_key' => 'women_executive_title',
         'gender' => 'women',
         'image' => 'women_executive.webp',
         'description_key' => 'women_executive_description',
         'price' => '',
         'modal_id' => 'modal-women-executive',
-        'details' => parse_package_csv('Executive Women.csv')
     ],
-    // Men
-    [
+    'men_classic' => [
         'title_key' => 'men_classic_title',
         'gender' => 'men',
         'image' => 'men_classic.webp',
         'description_key' => 'men_classic_description',
         'price' => '',
         'modal_id' => 'modal-men-classic',
-        'details' => parse_package_csv('Classic Men.csv')
     ],
-    [
+    'men_gold' => [
         'title_key' => 'men_gold_title',
         'gender' => 'men',
         'image' => 'men_gold.webp',
         'description_key' => 'men_gold_description',
         'price' => '',
         'modal_id' => 'modal-men-gold',
-        'details' => parse_package_csv('Gold Men.csv')
     ],
-    [
+    'men_executive' => [
         'title_key' => 'men_executive_title',
         'gender' => 'men',
         'image' => 'men_executive.webp',
         'description_key' => 'men_executive_description',
         'price' => '',
         'modal_id' => 'modal-men-executive',
-        'details' => parse_package_csv('Executive Men.csv')
     ],
 ];
+
+// Build the final $packages array by merging config with data
+$packages = [];
+foreach ($packages_config as $key => $config) {
+    if (isset($all_package_data[$key])) {
+        // Merge the config with the data from our file
+        $packages[] = array_merge($config, ['details' => $all_package_data[$key]['details']]);
+    }
+}
 ?>
 <div id="checkup-packages">
     <div class="section-title">
