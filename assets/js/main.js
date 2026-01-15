@@ -134,6 +134,31 @@
     if (select(this.hash)) {
       e.preventDefault()
 
+      // Custom logic for modal buttons
+      const isModalButton = this.classList.contains('btn-apply') || this.classList.contains('btn-appointment');
+      if (isModalButton) {
+        const modal = this.closest('.modal');
+        if (modal) {
+          const title = modal.querySelector('.modal-title').textContent.replace(' Details', '').trim();
+          let targetTextarea;
+
+          if (this.classList.contains('btn-apply')) {
+            targetTextarea = select('#f1message');
+          } else {
+            targetTextarea = select('#f2message');
+          }
+
+          if (targetTextarea) {
+            targetTextarea.value = `I am interested in the ${title} package.`;
+          }
+          
+          const modalInstance = bootstrap.Modal.getInstance(modal);
+          if (modalInstance) {
+            modalInstance.hide();
+          }
+        }
+      }
+
       let navbar = select('#navbar')
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
