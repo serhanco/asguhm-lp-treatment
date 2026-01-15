@@ -427,7 +427,7 @@ $related_doctors = get_field('lp_related_doctors');
                                 </select></div>
                             <div class="form-group mt-3"><input type="text" class="form-control" name="Phone" id="f1phone" placeholder="<?= the_field('f_phone', 'option'); ?>"></div>
                             <div class="form-group mt-3"><input type="text" class="form-control" name="Mail" id="f1mail" placeholder="<?= the_field('f_email', 'option'); ?>"></div>
-                            <div class="form-group mt-3"><textarea class="form-control" name="Message" rows="5" placeholder="<?= the_field('f_message', 'option'); ?>" required=""></textarea></div>
+                            <div class="form-group mt-3"><textarea class="form-control" name="Message" id="f1message" rows="5" placeholder="<?= the_field('f_message', 'option'); ?>" required=""></textarea></div>
                             <div class="text-center"><button id="f1submit" type="submit" class="form-control more-btn mt-3"><?= the_field('f_send', 'option'); ?><i class="bx bx-chevron-right"></i></button></div>
                             <input type="hidden" name="form_url" value="">
                         </form>
