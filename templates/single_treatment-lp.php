@@ -223,6 +223,20 @@ $translations = array(
         "ru" => "",
         "de" => "Schließen",
     ),
+    "modal_apply_button" => array(
+        "en" => "Apply",
+        "ro" => "",
+        "az" => "",
+        "ru" => "",
+        "de" => "Bewerben",
+    ),
+    "modal_appointment_button" => array(
+        "en" => "Appointment",
+        "ro" => "Programare",
+        "az" => "",
+        "ru" => "",
+        "de" => "Termin",
+    ),
     // Women Classic Check-Up
     "women_classic_title" => array("en" => "Women Classic Check-Up", "ro" => "", "az" => "", "ru" => "", "de" => "Damen Klassik Check-Up"),
     "women_classic_description" => array("en" => "Our introductory package covering essential health checks.", "ro" => "", "az" => "", "ru" => "", "de" => "Unser Einsteigerpaket mit den wichtigsten Gesundheitschecks."),

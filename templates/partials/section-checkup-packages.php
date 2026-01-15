@@ -137,6 +137,8 @@ $packages = [
                 <?php endif; ?>
             </div>
             <div class="modal-footer">
+                <a href="#get-a-quote" class="btn btn-apply scrollto" data-bs-dismiss="modal"><?= $translations["modal_apply_button"][$site] ?></a>
+                <a href="#get-a-quote" class="btn btn-appointment scrollto" data-bs-dismiss="modal"><?= $translations["modal_appointment_button"][$site] ?></a>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $translations["modal_close_button"][$site] ?></button>
             </div>
         </div>
