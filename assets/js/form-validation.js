@@ -157,6 +157,36 @@
     on('submit', '#form1', handleFormSubmit);
     on('submit', '#form2', handleFormSubmit);
     on('submit', '#form3', handleFormSubmit);
+
+    // Handle modal button clicks to populate form messages
+    const handleModalButtonClick = (e) => {
+      const target = e.target.closest('.btn-apply, .btn-appointment');
+      if (!target) return;
+
+      const modal = target.closest('.modal');
+      if (!modal) return;
+
+      const title = modal.querySelector('.modal-title').textContent.replace(' Details', '').trim();
+      let targetTextarea;
+
+      if (target.classList.contains('btn-apply')) {
+        targetTextarea = select('#f1message');
+      } else if (target.classList.contains('btn-appointment')) {
+        targetTextarea = select('#f2message');
+      }
+
+      if (targetTextarea) {
+        targetTextarea.value = `I am interested in the ${title} package.`;
+      }
+      
+      // Manually hide the modal
+      const modalInstance = bootstrap.Modal.getInstance(modal);
+      if (modalInstance) {
+          modalInstance.hide();
+      }
+    };
+
+    on('click', document, handleModalButtonClick, true);
   });
 
 })();
