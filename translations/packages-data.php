@@ -18,15 +18,15 @@ return [
                     'Chest X-Ray Posterior / Anterior',
                     'Thyroid Ultrasonography',
                     'Whole Abdominal Ultrasonography',
-                    'Breast Ultrasonography (Two Sides)2',
-                    'Mammography (Bilateral)2',
+                    'Breast Ultrasonography (Two Sides)',
+                    'Mammography (Bilateral)',
                 ]
             ],
             [
                 'title' => 'CARDIOLOGY EXAMINATIONS',
                 'items' => [
-                    'ECG1',
-                    'Echocardiography (Doppler+Colored+M+B Mode) 1',
+                    'ECG',
+                    'Echocardiography (Doppler+Colored+M+B Mode)',
                 ]
             ],
             [
@@ -76,7 +76,7 @@ return [
                 'items' => [
                     'Check Up examination',
                     'Cardiological Examination',
-                    'Gyenecological Examination',
+                    'Gynecological Examination',
                     'Dermatology Examination or Eye Examination',
                     'Dentist Examination',
                     'Diet Examination',
@@ -88,17 +88,17 @@ return [
                     'Chest x-ray Posterior / Anterior',
                     'Thyroid Ultrasonography',
                     'Whole Abdominal Ultrasonography',
-                    'Breast Ultrasonography (Two Sides) 2',
-                    'Mammography (Bilateral) 2',
-                    'Bone Density Measurement (Whole Body) 3',
-                    'Panoramic X-Ray 4',
+                    'Breast Ultrasonography (Two Sides)',
+                    'Mammography (Bilateral)',
+                    'Bone Density Measurement (Whole Body)',
+                    'Panoramic X-Ray',
                 ]
             ],
             [
                 'title' => 'CARDIOLOGY EXAMINATIONS',
                 'items' => [
                     'ECG',
-                    'Echocardiography (Doppler + Colored + M + B Mode) 1',
+                    'Echocardiography (Doppler + Colored + M + B Mode)',
                 ]
             ],
             [
@@ -121,7 +121,6 @@ return [
                     'Creatinine, Serum',
                     'Lipase',
                     'Lipoprotein (a) (Lp(a))',
-                    'Check Up Lipid Panel',
                     'Urinalysis',
                     'Triglycerides',
                     'Blood Urea Nitrogen (BUN)',
@@ -133,9 +132,6 @@ return [
                     'Insulin',
                     'Thyroid Stimulating Hormone (TSH)',
                     'Thyroxin, Free (FT4)',
-                    'CA 125',
-                    'CA 15-3',
-                    'CA 19-9',
                     'Hepatitis Bs Antigen (HBsAg)',
                     'Hepatitis Bs Antibody (anti-HBs)',
                     'Hepatitis C Antibody (anti-HCV)',
@@ -174,7 +170,7 @@ return [
                 'title' => 'DENTAL SERVICES',
                 'items' => [
                     'Dentist Examination',
-                    'Panoramic X-Ray 4',
+                    'Panoramic X-Ray',
                     'Upper Jaw Tartat Removel',
                     'Lower Jaw Tartar Removel',
                 ]
@@ -182,9 +178,9 @@ return [
             [
                 'title' => 'CARDIOLOGY EXAMINATIONS',
                 'items' => [
-                    'ECG with Effort 1',
-                    'ECG 1',
-                    'Echocardiography (Doppler+Colored+M+B Mode) 1',
+                    'ECG with Effort',
+                    'ECG',
+                    'Echocardiography (Doppler+Colored+M+B Mode)',
                     'Tension Holter (24 Hours)',
                 ]
             ],
@@ -195,9 +191,9 @@ return [
                     'Thorax CT (for screening purpose / low dose)',
                     'Thyroid Ultrasonography',
                     'Whole Abdominal Ultrasonography',
-                    'Breast Ultrasonography (two sides) 2',
+                    'Breast Ultrasonography (two sides)',
                     'Carotis Bilateral Color Doppler USG',
-                    'Mammography (Bilateral) 2',
+                    'Mammography (Bilateral)',
                     'Bone Density Measurement (Femur)',
                     'Bone Density Measurement (Lumbar AP)',
                     'MRI, Angiography (Intracranial)(Non-contrast)(3.0 T)',
@@ -280,7 +276,7 @@ return [
                     'Creatinine, Serum',
                     'Lactate Dehydrogenase (LDH)',
                     'Lipase',
-                    'Check up lipid paneli',
+                    'Check Up Lipid Panel',
                     'Lipoprotein (a) (Lp(a))',
                     'Magnesium (Mg)',
                     'Potassium (K)',
@@ -297,9 +293,6 @@ return [
                     'Thyroid Stimulating Hormone (TSH)',
                     'Thyroxin, Free (FT4)',
                     'Triiodothyronine, Free (FT3)',
-                    'CA 125',
-                    'CA 15-3',
-                    'CA 19-9',
                     'Culture, Throat',
                     'Parasites, Stool',
                     'Culture, Urine',
@@ -333,8 +326,8 @@ return [
             [
                 'title' => 'CARDIOLOGY EXAMINATIONS',
                 'items' => [
-                    'ECG 1',
-                    'Echocardiography (Doppler + Colored + M + B Mode) 1',
+                    'ECG',
+                    'Echocardiography (Doppler + Colored + M + B Mode)',
                 ]
             ],
             [
@@ -366,8 +359,8 @@ return [
                     'Testosterone, Bioavailable',
                     'Thyroid Stimulating Hormone (TSH)',
                     'Thyroxin, Free (FT4)',
-                    'Prostate Specific Antigen (PSA), Total 3',
-                    'Prostate Specific Antigen (PSA), Free 3',
+                    'Prostate Specific Antigen (PSA), Total',
+                    'Prostate Specific Antigen (PSA), Free',
                     'Hepatitis Bs Antigen (HBsAg)',
                     'Hepatitis Bs Antibody (anti-HBs)',
                     'Hepatitis C Antibody (anti-HCV)',
@@ -395,14 +388,15 @@ return [
                     'Thorax CT (For Screening Purpose / Low Dose)',
                     'Thyroid Ultrasonography',
                     'Whole Abdominal Ultrasonography',
-                    'Panoramic X-Ray 3',
+                    'Panoramic X-Ray',
                 ]
             ],
             [
                 'title' => 'CARDIOLOGY EXAMINATIONS',
                 'items' => [
-                    'ECG 1',
-                    'Echocardiography (Doppler + Colored + M + B Mode) 1',
+                    'ECG',
+                    'Echocardiography (Doppler + Colored + M + B Mode)',
+                    'Exercise Stress ECG',
                 ]
             ],
             [
@@ -425,7 +419,6 @@ return [
                     'Creatinine, Serum',
                     'Lipase',
                     'Lipoprotein (a) (Lp(a))',
-                    'Check Up Lipid Panel',
                     'Urinalysis',
                     'Triglycerides',
                     'Blood Urea Nitrogen (BUN)',
@@ -439,10 +432,8 @@ return [
                     'Testosterone, Bioavailable',
                     'Thyroid Stimulating Hormone (TSH)',
                     'Thyroxin, Free (FT4)',
-                    'CA 15-3',
-                    'CA 19-9',
-                    'Prostate Specific Antigen (PSA), Total 2',
-                    'Prostate Specific Antigen (PSA), Free 2',
+                    'Prostate Specific Antigen (PSA), Total',
+                    'Prostate Specific Antigen (PSA), Free',
                     'Hepatitis Bs Antigen (HBsAg)',
                     'Hepatitis Bs Antibody (anti-HBs)',
                     'Hepatitis C Antibody (anti-HCV)',
@@ -475,7 +466,7 @@ return [
                 'title' => 'DENTAL SERVICES',
                 'items' => [
                     'Dentist Examination',
-                    'Panoramic X-Ray 4',
+                    'Panoramic X-Ray',
                     'Upper Jaw Tartat Removel',
                     'Lower Jaw Tartar Removel',
                 ]
@@ -483,9 +474,9 @@ return [
             [
                 'title' => 'CARDIOLOGY EXAMINATIONS',
                 'items' => [
-                    'ECG with Effort 1',
-                    'ECG 1',
-                    'Echocardiography (Doppler+Colored+M+B Mode) 1',
+                    'ECG with Effort',
+                    'ECG',
+                    'Echocardiography (Doppler+Colored+M+B Mode)',
                     'Tension Holter (24 Hours)',
                 ]
             ],
@@ -578,7 +569,7 @@ return [
                     'Creatinine, Serum',
                     'Lactate Dehydrogenase (LDH)',
                     'Lipase',
-                    'Check up lipid paneli',
+                    'Check Up Lipid Panel',
                     'Lipoprotein (a) (Lp(a))',
                     'Magnesium (Mg)',
                     'Potassium (K)',
@@ -595,10 +586,8 @@ return [
                     'Thyroid Stimulating Hormone (TSH)',
                     'Thyroxin, Free (FT4)',
                     'Triiodothyronine, Free (FT3)',
-                    'CA 15-3',
-                    'CA 19-9',
-                    'Prostate Specific Antigen (PSA), Total 3',
-                    'Prostate Specific Antigen (PSA), Free 3',
+                    'Prostate Specific Antigen (PSA), Total',
+                    'Prostate Specific Antigen (PSA), Free',
                     'Culture, Throat',
                     'Parasites, Stool',
                     'Hepatitis B s Antigen (HBsAg)',
